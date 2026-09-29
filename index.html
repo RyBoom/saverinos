@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savarino’s | Bakery, Deli &amp; Market in Columbia, TN</title>
+<meta name="description" content="Sicilian bread, cannoli and sandwiches, made from scratch at 314 W 11th St in Columbia, Tennessee. Call (931) 223-8335 to order.">
+<meta name="theme-color" content="#8F3421">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;1,400&family=League+Gothic:wdth@75..100&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Savarino’s Bakery, Deli & Market",
+  "telephone": "+1-931-223-8335",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "314 W 11th St",
+    "addressLocality": "Columbia",
+    "addressRegion": "TN",
+    "postalCode": "38401",
+    "addressCountry": "US"
+  },
+  "servesCuisine": ["Italian", "Sicilian"],
+  "award": "Nashville Scene Best of Nashville 2023: Best Reason to Go to Columbia"
+}
+</script>
+<style>
+:root {
+  --white: #FFFFFF;
+  --ink: #1C1714;
+  --ink-2: #5A4E47;
+  --brick: #8F3421;
+  --brick-shade: #7C2C1B;
+  --ochre: #F0B43A;
+  --on-brick-2: #F4DCD3;
+  --on-ink-2: #D9CFC8;
+  --rule-ink: rgba(28, 23, 20, .16);
+  --rule-light: rgba(255, 255, 255, .26);
+
+  /* 8px rhythm, stepped on primes */
+  --s1: 8px; --s2: 16px; --s3: 24px; --s5: 40px; --s7: 56px; --s12: 96px; --s14: 112px;
+  --gutter: clamp(16px, 5vw, 56px);
+  --col-gap: 24px;
+
+  /* √2 type scale */
+  --t0: 0.8125rem;
+  --t1: 1.0625rem;
+  --t2: clamp(1.4375rem, 1.3rem + .5vw, 1.5625rem);
+  --t3: clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);
+  --t4: clamp(2.5rem, 2rem + 2vw, 3.1875rem);
+  --t5: clamp(3rem, 2.2rem + 3.4vw, 4.5rem);
+  --t6: clamp(3.75rem, 2.6rem + 5vw, 6rem);
+
+  --f-display: "League Gothic", "Arial Narrow", sans-serif;
+  --f-text: "Besley", Georgia, serif;
+
+  --brick-course: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: var(--s2); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font: 400 var(--t1)/1.55 var(--f-text);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--brick);
+}
+@media (min-width: 1080px) { body { font-size: 1.125rem; } }
+::selection { background: var(--ochre); color: var(--ink); }
+html { scrollbar-color: var(--brick) var(--white); }
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 3px; }
+:focus-visible { outline: 3px solid var(--focus, var(--ink)); outline-offset: 3px; border-radius: 2px; }
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
+.display { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .005em; }
+.num { font-family: var(--f-display); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Fields */
+.field-brick { background-color: var(--brick); background-image: var(--brick-course); color: var(--white); --focus: var(--ochre); --pounce: var(--white); --pounce-bg: var(--brick); --pounce-ink: var(--white); }
+.field-ink { background: var(--ink); color: var(--white); --focus: var(--ochre); --pounce: var(--ochre); --pounce-bg: var(--ink); --pounce-ink: var(--white); }
+.field-white { background: var(--white); color: var(--ink); --focus: var(--ink); --pounce: var(--brick); --pounce-bg: var(--white); --pounce-ink: var(--ink); }
+
+/* Call button: ochre paint, ink keyline */
+.call {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 0 .5em;
+  text-align: center;
+  min-height: 56px; padding: 12px 22px 10px;
+  background: var(--ochre); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 3px;
+  font-family: var(--f-display); font-size: 1.75rem; line-height: 1; letter-spacing: .03em; text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color .15s ease-out, transform .15s ease-out;
+}
+.call:hover { background: #F6C45A; }
+.call:active { transform: translateY(1px); }
+.call > span { white-space: nowrap; }
+.call .num { letter-spacing: .04em; }
+.call--block { display: flex; width: 100%; }
+.textlink { font-weight: 600; }
+
+/* Placeholders: dotted means not painted yet */
+.tbd {
+  display: inline-block;
+  padding: 1px 8px 2px;
+  border: 2px dotted currentColor;
+  border-radius: 2px;
+  font-size: .875rem; font-weight: 600; line-height: 1.5;
+  letter-spacing: .01em;
+  color: var(--pounce);
+}
+
+.shot { position: relative; color: var(--pounce); }
+.shot__frame {
+  position: relative;
+  display: grid; place-content: center;
+  aspect-ratio: var(--ratio-m, 3 / 2);
+  padding: var(--s3);
+  border: 2px dotted currentColor;
+  border-radius: 2px;
+  text-align: center;
+  isolation: isolate;
+}
+.shot__frame::before, .shot__frame::after {
+  content: ""; position: absolute; z-index: -1; opacity: .3;
+}
+.shot__frame::before { left: 12px; right: 12px; top: 50%; border-top: 2px dotted currentColor; }
+.shot__frame::after { top: 12px; bottom: 12px; left: 50%; border-left: 2px dotted currentColor; }
+.shot__label { display: grid; gap: 6px; justify-items: center; padding: 10px 14px 12px; background: var(--pounce-bg); max-width: 22rem; }
+.shot__tag { font-family: var(--f-display); font-size: 1.375rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1; }
+.shot__what {
+  font-size: var(--t2); font-weight: 600; line-height: 1.3; max-width: 20ch; color: var(--pounce-ink);
+}
+.shot__spec { font-size: .875rem; font-style: italic; }
+
+/* Section heads */
+.sec { padding-block: var(--s12) var(--s12); }
+.sec__head { display: grid; gap: var(--s2); margin-bottom: var(--s7); }
+.sec__title { font-size: var(--t5); }
+.field-white .sec__title { color: var(--brick); }
+.sec__lede { font-size: var(--t2); line-height: 1.35; max-width: 30ch; }
+.sec__body { max-width: 62ch; }
+.field-white .sec__body { color: var(--ink-2); }
+
+/* ============ HERO ============ */
+.hero { padding-block: var(--s2) var(--s5); }
+.nav { display: flex; flex-wrap: wrap; gap: 0 16px; font-family: var(--f-display); font-size: 1.1875rem; letter-spacing: .07em; text-transform: uppercase; line-height: 1.3; }
+.nav a { text-decoration: none; display: inline-block; padding-block: 6px; }
+.nav a:hover { text-decoration: underline; text-decoration-color: var(--ochre); }
+.sign { margin-top: var(--s3); container-type: inline-size; }
+.wordmark {
+  display: block;
+  font-family: var(--f-display); font-weight: 400; text-transform: uppercase;
+  font-size: 30.2cqw;
+  line-height: .8; letter-spacing: .01em;
+  margin-left: -.02em;
+}
+.sign__rule { height: 3px; background: var(--white); margin-block: 12px 14px; }
+.descriptor { font-family: var(--f-display); font-size: var(--t4); line-height: 1; letter-spacing: .05em; text-transform: uppercase; color: var(--ochre); }
+.hero__grid { display: grid; gap: var(--s2); margin-top: var(--s2); }
+.offer { font-size: var(--t2); line-height: 1.3; font-weight: 600; max-width: 26ch; }
+.facts { display: grid; border-top: 1px solid var(--rule-light); }
+.fact { display: grid; grid-template-columns: 5.25rem 1fr; gap: var(--s2); align-items: baseline; padding-block: 10px; border-bottom: 1px solid var(--rule-light); }
+.fact__k { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--on-brick-2); line-height: 1.2; }
+.fact__v { line-height: 1.4; }
+.fact__v .tbd { margin-top: 4px; }
+.hero__cta { display: grid; gap: 10px; }
+.hero__cta-note { font-size: .9375rem; color: var(--on-brick-2); }
+
+/* ============ PROOF ============ */
+.proof { padding-block: var(--s12) var(--s12); }
+.proof__grid { display: grid; gap: var(--s7); }
+.quote { font-size: var(--t4); font-weight: 800; line-height: 1.08; letter-spacing: -.01em; max-width: 14ch; text-indent: -.44em; }
+.quote__mark { color: var(--brick); }
+.quote-by { margin-top: var(--s3); font-size: var(--t1); color: var(--ink-2); }
+.quote-by strong { color: var(--ink); font-weight: 600; }
+.creds { margin-top: var(--s5); display: grid; border-top: 1px solid var(--rule-ink); }
+.creds li { padding-block: var(--s2); border-bottom: 1px solid var(--rule-ink); }
+.creds strong { font-weight: 600; }
+
+/* ============ THE BOARD ============ */
+.boardwall { padding-block: 0 var(--s12); }
+.board { padding: var(--s7) var(--s3) var(--s5); }
+.board .sec__title { color: var(--ochre); font-size: var(--t6); }
+.board .sec__lede { color: var(--white); }
+.board .sec__body { color: var(--on-ink-2); }
+.menu { display: grid; border-top: 2px solid var(--rule-light); }
+.item { display: grid; gap: 10px; padding-block: var(--s5); border-bottom: 1px solid var(--rule-light); }
+.item__name { font-size: var(--t5); color: var(--white); }
+.item__line { color: var(--on-ink-2); max-width: 44ch; }
+.item__meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.since { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ochre); line-height: 1.2; }
+.item__text { display: grid; gap: 14px; }
+.item--star .item__name { font-size: var(--t6); color: var(--ochre); }
+.item--star .item__line { color: var(--white); font-size: var(--t2); line-height: 1.35; max-width: 30ch; }
+.item--star .shot { margin-top: var(--s3); }
+.board__foot { display: grid; gap: var(--s2); padding-top: var(--s5); }
+.board__foot p { color: var(--on-ink-2); }
+
+/* ============ THE CASE ============ */
+.shelf { display: grid; gap: var(--s3); padding-block: var(--s5); border-top: 2px solid var(--ink); }
+.shelf__name { font-size: var(--t4); color: var(--ink); }
+.goods { display: grid; }
+.good { align-content: start; padding-block: var(--s2) 18px; border-bottom: 1px solid var(--rule-ink); }
+.good:first-child { padding-top: 0; }
+.good__name { font-family: var(--f-display); font-weight: 400; font-size: var(--t3); text-transform: uppercase; letter-spacing: .02em; line-height: 1; }
+.good__line { margin-top: 6px; color: var(--ink-2); max-width: 46ch; }
+.counter-note { padding-top: var(--s5); border-top: 2px solid var(--ink); display: grid; gap: var(--s2); }
+.counter-note p:first-child { font-size: var(--t2); line-height: 1.35; font-weight: 600; max-width: 36ch; }
+
+/* ============ PANS & CAKES ============ */
+.pans { border-top: 1px solid var(--rule-ink); }
+.pans__big { font-size: var(--t6); color: var(--brick); }
+.pans__grid { display: grid; gap: var(--s5); }
+.pan-list { display: grid; border-top: 1px solid var(--rule-ink); }
+.pan { display: grid; gap: 6px; align-content: start; padding-block: var(--s3); border-bottom: 1px solid var(--rule-ink); }
+.pan__name { font-family: var(--f-display); font-weight: 400; font-size: var(--t3); text-transform: uppercase; letter-spacing: .02em; line-height: 1; }
+.pan__line { color: var(--ink-2); }
+.pans__side { display: grid; gap: var(--s5); align-content: start; }
+.preorder { display: grid; gap: var(--s2); align-content: start; }
+.preorder__k { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ============ STORY ============ */
+.story { border-top: 1px solid var(--rule-ink); }
+.chapters { display: grid; border-top: 2px solid var(--ink); }
+.ch { display: grid; gap: 8px; align-content: start; padding-block: var(--s5); border-bottom: 1px solid var(--rule-ink); }
+.chapters--after { border-top: 0; }
+.ch__when { font-size: var(--t4); color: var(--brick); }
+.ch__where { font-weight: 600; }
+.ch__text { max-width: 46ch; color: var(--ink-2); }
+.ch .shot { margin-top: var(--s3); max-width: 420px; }
+
+/* The wall repaints itself */
+.wall { padding-block: var(--s7); }
+.wall__intro { font-size: var(--t2); line-height: 1.35; font-weight: 600; max-width: 30ch; margin-bottom: var(--s5); }
+.ghost {
+  container-type: inline-size;
+  aspect-ratio: 1 / 1.08;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--f-display); text-transform: uppercase; line-height: .82; color: var(--white);
+}
+.ghost__layer { position: absolute; white-space: nowrap; letter-spacing: .01em; transition: opacity 900ms cubic-bezier(.16, 1, .3, 1); }
+.ghost__layer[data-layer="0"] { font-size: 48cqw; top: 0; left: 0; }
+.ghost__layer[data-layer="1"] { font-size: 34cqw; top: 25cqw; right: 0; letter-spacing: .03em; }
+.ghost__layer[data-layer="2"] { font-size: 31cqw; font-stretch: 75%; bottom: 0; left: 50%; transform: translateX(-50%); }
+.ghost__layer[data-layer="3"] { font-size: 29.4cqw; top: 55cqw; left: 50%; transform: translateX(-50%); }
+.ghost__layer.is-ghost, .ghost:not(.is-armed) .ghost__layer:not([data-layer="3"]) { opacity: .15; }
+.ghost .lt { display: inline-block; }
+.ghost.is-armed .lt { clip-path: inset(0 0 100% 0); }
+.ghost.is-armed .is-painting .lt { animation: brush 340ms cubic-bezier(.16, 1, .3, 1) forwards; animation-delay: calc(var(--i) * 70ms); }
+@keyframes brush { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 -8% 0); } }
+.wall__caption { margin-top: var(--s3); min-height: 3.2em; font-size: var(--t2); line-height: 1.35; font-weight: 600; max-width: 32ch; }
+.wall__replay {
+  margin-top: var(--s2);
+  appearance: none; background: none; border: 0; padding: 10px 0; cursor: pointer;
+  color: var(--white); font: 600 1rem/1.2 var(--f-text); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; text-decoration-color: var(--ochre);
+}
+.wall__replay[hidden] { display: none; }
+
+/* ============ WHOLESALE ============ */
+.wholesale { border-top: 1px solid var(--rule-ink); }
+.ws__grid { display: grid; gap: var(--s5); }
+.ws__main { display: grid; gap: var(--s5); align-content: start; }
+.ws__facts { display: grid; border-top: 1px solid var(--rule-ink); }
+.ws__facts div { display: grid; gap: 4px; padding-block: var(--s2); border-bottom: 1px solid var(--rule-ink); }
+.ws__facts dt { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; }
+.ws__facts dd { color: var(--ink-2); }
+
+/* ============ VISIT ============ */
+.visit .sec__title { color: var(--ochre); font-size: var(--t5); }
+.visit .sec__head { margin-bottom: var(--s3); }
+.address { font-size: var(--t6); line-height: .86; }
+.address-sub { margin-top: var(--s2); font-size: var(--t2); line-height: 1.35; }
+.visit__grid { display: grid; gap: var(--s7); }
+.visit__actions { display: grid; gap: var(--s2); margin-top: var(--s5); }
+.visit .textlink { font-size: 1.0625rem; justify-self: start; padding-block: 6px; }
+.hours { display: grid; gap: 8px; padding-block: var(--s3); border-block: 1px solid var(--rule-light); margin-top: var(--s5); }
+.hours__k { font-family: var(--f-display); font-size: 1.75rem; letter-spacing: .06em; text-transform: uppercase; line-height: 1; }
+.hours p { color: var(--on-brick-2); }
+.map .shot__frame { place-content: start; padding: var(--s2); }
+.map .shot__frame::before, .map .shot__frame::after { display: none; }
+.map svg { position: absolute; inset: var(--s3); width: calc(100% - 2 * var(--s3)); height: calc(100% - 2 * var(--s3)); }
+.map .shot__label { justify-items: start; position: relative; text-align: left; }
+.porch { display: grid; gap: var(--s3); padding-top: var(--s5); border-top: 3px solid var(--white); }
+.porch__words { display: grid; gap: var(--s2); }
+.porch__title { font-size: var(--t4); }
+.porch__text { font-size: var(--t2); line-height: 1.35; max-width: 28ch; }
+
+/* ============ FOOTER ============ */
+.foot { padding-block: var(--s7) calc(var(--s7) + 88px); }
+.foot__grid { display: grid; gap: var(--s3); }
+.foot .foot__mark { font-family: var(--f-display); font-size: var(--t5); line-height: .9; text-transform: uppercase; color: var(--ochre); }
+.foot p { color: var(--on-ink-2); }
+.foot a { color: var(--white); }
+.foot__note { font-size: .9375rem; padding-top: var(--s3); border-top: 1px solid var(--rule-light); }
+
+/* Sticky call bar, phones only */
+.callbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: var(--ink);
+  transform: translateY(110%);
+  transition: transform .28s cubic-bezier(.16, 1, .3, 1);
+}
+.callbar.is-on { transform: none; }
+@media (prefers-reduced-motion: reduce) { .callbar { transition: none; } }
+
+/* ============ ≥ 720px ============ */
+@media (min-width: 720px) {
+  .hero__grid { grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+  .hero__cta { grid-column: 1 / -1; max-width: 520px; }
+  .board { padding: var(--s12) var(--s7) var(--s7); }
+  .item:not(.item--star) { grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); align-items: baseline; }
+  .item:not(.item--star) .item__meta { grid-column: 2; }
+  .goods { grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+  .good:nth-child(2) { padding-top: 0; }
+  .ch { grid-template-columns: 2fr 5fr; column-gap: var(--col-gap); }
+  .ch > :not(.ch__when) { grid-column: 2; }
+  .ch__when { grid-row: 1 / span 3; }
+  .ghost { aspect-ratio: 16 / 10; }
+  .ghost__layer[data-layer="0"] { font-size: 38cqw; }
+  .ghost__layer[data-layer="1"] { font-size: 27cqw; top: 2cqw; }
+  .ghost__layer[data-layer="2"] { font-size: 21cqw; }
+  .ghost__layer[data-layer="3"] { font-size: 24cqw; top: 50%; transform: translate(-50%, -54%); }
+  .callbar { display: none; }
+  .foot { padding-bottom: var(--s7); }
+}
+
+/* ============ ≥ 1080px: seven columns ============ */
+@media (min-width: 1080px) {
+  .g7 { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .sec { padding-block: var(--s14); }
+  .shot__frame { aspect-ratio: var(--ratio, 4 / 5); }
+  .sec__head { grid-column: 1 / -1; grid-template-columns: subgrid; align-items: end; margin-bottom: var(--s12); }
+  .sec__head .sec__title { grid-column: 1 / 4; }
+  .sec__head .sec__lede, .sec__head .sec__body { grid-column: 4 / 8; }
+  .sec__head .sec__body { grid-row: 2; }
+
+  .hero { padding-bottom: var(--s7); }
+  .sign { margin-top: var(--s7); }
+  .hero__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); margin-top: var(--s5); align-items: start; }
+  .hero__grid .offer-wrap { grid-column: 1 / 4; }
+  .hero__grid .facts { grid-column: 4 / 6; }
+  .hero__grid .hero__cta { grid-column: 6 / 8; max-width: none; align-self: start; }
+  .offer { font-size: var(--t3); }
+
+  .proof__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: center; }
+  .proof__grid > :first-child { grid-column: 1 / 5; }
+  .proof__grid > .shot { grid-column: 5 / 8; }
+  .quote { font-size: var(--t5); }
+  .creds { grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+
+  .board { max-width: 1328px; margin-inline: auto; padding: var(--s14) var(--s12) var(--s7); }
+  .board .sec__head .sec__title { grid-column: 1 / 5; }
+  .board .sec__head .sec__lede, .board .sec__head .sec__body { grid-column: 5 / 8; }
+  .item--star { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: center; }
+  .item--star > .item__text { grid-column: 1 / 5; display: grid; gap: 14px; }
+  .item--star .shot { grid-column: 5 / 8; margin-top: 0; }
+  .item:not(.item--star) { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .item:not(.item--star) { row-gap: 12px; }
+  .item:not(.item--star) .item__name { grid-column: 1 / 4; grid-row: 1 / span 2; }
+  .item:not(.item--star) .item__line { grid-column: 4 / 8; font-size: var(--t2); line-height: 1.35; }
+  .item:not(.item--star) .item__meta { grid-column: 4 / 8; }
+  .board__foot { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: center; }
+  .board__foot p { grid-column: 1 / 5; }
+  .board__foot .call { grid-column: 5 / 8; }
+
+  .shelf { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); padding-block: var(--s5) var(--s7); }
+  .shelf__name { grid-column: 1 / 3; }
+  .shelf .goods { grid-column: 3 / 6; grid-template-columns: 1fr; }
+  .shelf .good:nth-child(2) { padding-top: var(--s2); }
+  .shelf .shot { grid-column: 6 / 8; grid-row: 1 / span 2; }
+  .shelf--flip .goods { grid-column: 5 / 8; }
+  .shelf--flip .shot { grid-column: 3 / 5; }
+  .shelf--wide .shot { grid-column: 3 / 8; grid-row: 1; }
+  .shelf--wide .goods { grid-column: 3 / 8; grid-row: 2; grid-template-columns: 1fr 1fr; }
+  .shelf--wide .good:nth-child(2) { padding-top: 0; }
+  .counter-note { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: center; }
+  .counter-note p:first-child { grid-column: 3 / 6; }
+
+  .pans__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .pan-list { grid-column: 1 / 5; grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+  .pans__side { grid-column: 5 / 8; display: grid; gap: var(--s5); align-content: start; }
+
+  .ch { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .ch__when { grid-column: 1 / 3; }
+  .ch > :not(.ch__when):not(.shot) { grid-column: 3 / 6; }
+  .ch .shot { grid-column: 6 / 8; grid-row: 1 / span 3; margin-top: 0; }
+  .wall { padding-block: var(--s12); }
+  .wall__inner { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .wall__intro { grid-column: 1 / 5; }
+  .ghost { grid-column: 1 / -1; aspect-ratio: 16 / 7.5; }
+  .ghost__layer[data-layer="0"] { font-size: 31cqw; }
+  .ghost__layer[data-layer="1"] { font-size: 22cqw; top: 1cqw; }
+  .ghost__layer[data-layer="2"] { font-size: 17cqw; }
+  .ghost__layer[data-layer="3"] { font-size: 21cqw; }
+  .wall__foot { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: baseline; }
+  .wall__caption { grid-column: 1 / 5; }
+  .wall__replay { grid-column: 7 / 8; justify-self: end; }
+
+  .ws__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .ws__main { grid-column: 1 / 4; display: grid; gap: var(--s5); align-content: start; }
+  .ws__grid .shot { grid-column: 5 / 8; }
+
+  .visit__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .visit__where { grid-column: 1 / 5; }
+  .map { grid-column: 5 / 8; }
+  .porch { grid-column: 1 / -1; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: center; }
+  .porch__words { grid-column: 1 / 4; display: grid; gap: var(--s3); }
+  .porch .shot { grid-column: 4 / 8; }
+
+  .foot__grid { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--col-gap); align-items: end; }
+  .foot__grid > :first-child { grid-column: 1 / 4; }
+  .foot__grid > :nth-child(2) { grid-column: 4 / 6; }
+  .foot__grid > :nth-child(3) { grid-column: 6 / 8; }
+  .foot__note { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero field-brick" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Sections">
+      <a href="#board">The Board</a>
+      <a href="#case">The Case</a>
+      <a href="#pans">Pans &amp; Cakes</a>
+      <a href="#story">Our Story</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#visit">Visit</a>
+    </nav>
+
+    <div class="sign">
+      <h1><span class="wordmark">Savarino’s</span><span class="vh">: </span></h1>
+      <div class="sign__rule" aria-hidden="true"></div>
+      <p class="descriptor">Bakery, Deli &amp; Market</p>
+    </div>
+
+    <div class="hero__grid">
+      <div class="offer-wrap">
+        <p class="offer">Sicilian bread, cannoli and sandwiches. From scratch, on 11th Street.</p>
+      </div>
+
+      <dl class="facts">
+        <div class="fact">
+          <dt class="fact__k">Today</dt>
+          <dd class="fact__v" data-status><span data-today>Today</span><br><span class="tbd">Hours: confirm with owner</span></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact__k">Find us</dt>
+          <dd class="fact__v"><span class="num" style="font-size:1.3em;letter-spacing:.04em">314</span> W 11th St, Columbia, TN<br><a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=314+W+11th+St+Columbia+TN+38401">Directions</a></dd>
+        </div>
+      </dl>
+
+      <div class="hero__cta">
+        <a class="call call--block" href="tel:+19312238335" data-hero-call><span>Call to order</span> <span class="num">(931) 223-8335</span></a>
+        <p class="hero__cta-note">Sandwiches, pans, cakes, bread. A person picks up.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="proof field-white" aria-label="What people say">
+  <div class="wrap proof__grid">
+    <div>
+      <p class="quote"><span class="quote__mark">“</span>Best Reason to Go to Columbia.<span class="quote__mark">”</span></p>
+      <p class="quote-by"><strong>Nashville Scene</strong>, Best of Nashville 2023</p>
+      <ul class="creds">
+        <li><strong>Top-ranked bakery in Columbia</strong> on Yelp.</li>
+        <li><strong>Diners, Drive-ins and Dives</strong> came by back when we were the Cucina.</li>
+      </ul>
+    </div>
+    <figure class="shot" style="--ratio: 4 / 3">
+      <div class="shot__frame" role="img" aria-label="Photo placeholder: the brick building at 11th and Parker">
+        <span class="shot__label"><span class="shot__tag">Photo</span>
+        <span class="shot__what">The brick building at 11th and Parker, porch in frame</span>
+        <span class="shot__spec">4:3, morning light from across the street</span></span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="boardwall field-brick" id="board" aria-labelledby="board-h">
+  <div class="wrap">
+    <div class="board field-ink">
+      <div class="sec__head g7">
+        <h2 class="sec__title display" id="board-h">The Board</h2>
+        <p class="sec__lede">At the Cucina, the sandwiches were named after the regulars. We called them the Sandwich Gang.</p>
+        <p class="sec__body">Made to order. Call it in and it’s ready when you walk up.</p>
+      </div>
+
+      <ol class="menu">
+        <li class="item item--star">
+          <div class="item__text">
+            <h3 class="item__name display">The Palermo</h3>
+            <p class="item__line">Rose Palermo, attorney, was the only woman in the Sandwich Gang. She told us her sandwich was going on the board. She won that one.</p>
+            <p class="since">On the board since the Cucina</p>
+          </div>
+          <figure class="shot" style="--ratio: 4 / 3">
+            <div class="shot__frame" role="img" aria-label="Photo placeholder: the Palermo, cut in half, on deli paper">
+              <span class="shot__label"><span class="shot__tag">Photo</span>
+              <span class="shot__what">The Palermo, cut in half, on deli paper</span>
+              <span class="shot__spec">4:3, overhead, on the counter</span></span>
+            </div>
+          </figure>
+        </li>
+        <li class="item">
+          <h3 class="item__name display">The Sicilian</h3>
+          <p class="item__line">Dad was born in Sicily, so this one gets inspected.</p>
+          <p class="item__meta"><span class="tbd">Line: confirm with owner</span></p>
+        </li>
+        <li class="item">
+          <h3 class="item__name display">Sausage &amp; Pepper</h3>
+          <p class="item__line">Sausage, peppers, our roll. That’s the whole speech.</p>
+          <p class="item__meta"><span class="tbd">Line: confirm with owner</span></p>
+        </li>
+        <li class="item">
+          <h3 class="item__name display">Chicken Parm</h3>
+          <p class="item__line">You know chicken parm. You don’t know it on our bread yet.</p>
+          <p class="item__meta"><span class="tbd">Line: confirm with owner</span></p>
+        </li>
+      </ol>
+
+      <div class="board__foot">
+        <p>Deli meats and cheeses at the counter, too.</p>
+        <a class="call" href="tel:+19312238335"><span>Call it in</span> <span class="num">(931) 223-8335</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec field-white" id="case" aria-labelledby="case-h">
+  <div class="wrap">
+    <div class="sec__head g7">
+      <h2 class="sec__title display" id="case-h">The Case</h2>
+      <p class="sec__lede">Everything in here is made from scratch, right here.</p>
+    </div>
+
+    <div class="shelf">
+      <h3 class="shelf__name display">Pastry</h3>
+      <ul class="goods">
+        <li class="good"><h4 class="good__name">Cannoli</h4><p class="good__line">The Scene called us the best reason to go to Columbia. We think they meant these.</p></li>
+        <li class="good"><h4 class="good__name">Sfogliatelle</h4><p class="good__line">The one shaped like a shell. Say it however you want, we’ll know.</p></li>
+        <li class="good"><h4 class="good__name">Bomboloni</h4><p class="good__line">Italian doughnuts. Don’t tell them we said doughnuts.</p></li>
+        <li class="good"><h4 class="good__name">Tiramisu</h4><p class="good__line">It means “pick me up.” So pick one up.</p></li>
+      </ul>
+      <figure class="shot">
+        <div class="shot__frame" role="img" aria-label="Photo placeholder: sfogliatelle in the case">
+          <span class="shot__label"><span class="shot__tag">Photo</span>
+          <span class="shot__what">Sfogliatelle in the case</span>
+          <span class="shot__spec">4:5, through the glass</span></span>
+        </div>
+      </figure>
+    </div>
+
+    <div class="shelf shelf--flip">
+      <h3 class="shelf__name display">Cookies</h3>
+      <ul class="goods">
+        <li class="good"><h4 class="good__name">Biscotti</h4><p class="good__line">Biscotti. Not biscuits. These got us through the pandemic. Story’s below.</p></li>
+        <li class="good"><h4 class="good__name">Pignoli</h4><p class="good__line">Pine nuts on top. That’s how you know.</p></li>
+        <li class="good"><h4 class="good__name">Rainbow cookies</h4><p class="good__line">The ones from every Brooklyn bakery window. Now on 11th Street.</p></li>
+      </ul>
+      <figure class="shot">
+        <div class="shot__frame" role="img" aria-label="Photo placeholder: rainbow cookies stacked, cut side out">
+          <span class="shot__label"><span class="shot__tag">Photo</span>
+          <span class="shot__what">Rainbow cookies stacked, cut side out</span>
+          <span class="shot__spec">4:5, tight, on the tray</span></span>
+        </div>
+      </figure>
+    </div>
+
+    <div class="shelf shelf--wide">
+      <h3 class="shelf__name display">Bread</h3>
+      <ul class="goods">
+        <li class="good"><h4 class="good__name">Italian bread</h4><p class="good__line">Restaurants buy it wholesale. You can just buy a loaf.</p></li>
+        <li class="good"><h4 class="good__name">Hoagie rolls</h4><p class="good__line">Take a bag home. Your sandwiches will thank you.</p></li>
+      </ul>
+      <figure class="shot" style="--ratio: 21 / 9">
+        <div class="shot__frame" role="img" aria-label="Photo placeholder: bread coming out of the oven">
+          <span class="shot__label"><span class="shot__tag">Photo</span>
+          <span class="shot__what">Bread coming out of the oven</span>
+          <span class="shot__spec">Wide, steam and all</span></span>
+        </div>
+      </figure>
+    </div>
+
+    <div class="counter-note">
+      <p>Also at the counter: deli meats and cheeses, fresh pasta and sauce.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec pans field-white" id="pans" aria-labelledby="pans-h">
+  <div class="wrap">
+    <div class="sec__head g7">
+      <h2 class="sec__title display" id="pans-h">Family Pans &amp; Cakes</h2>
+      <p class="sec__lede">Feeding a crowd? Call ahead. Tell them you made it. We won’t say a word.</p>
+    </div>
+
+    <div class="pans__grid">
+      <ul class="pan-list">
+        <li class="pan"><h3 class="pan__name">Lasagna</h3><p class="pan__line">Family size. Corner pieces go first. Plan accordingly.</p></li>
+        <li class="pan"><h3 class="pan__name">Stuffed shells</h3><p class="pan__line">Family size. Nobody brings back leftovers.</p></li>
+        <li class="pan"><h3 class="pan__name">Fresh pasta &amp; sauce</h3><p class="pan__line">Take it home, boil the water, take the credit.</p></li>
+        <li class="pan"><h3 class="pan__name">Custom cakes</h3><p class="pan__line">Tell us the occasion and how many people. We’ll take it from there.</p></li>
+      </ul>
+
+      <div class="pans__side">
+        <div class="preorder">
+          <p class="preorder__k">Order ahead</p>
+          <p><span class="tbd">Lead time: confirm with owner</span></p>
+          <a class="call call--block" href="tel:+19312238335"><span>Call to pre-order</span> <span class="num">(931) 223-8335</span></a>
+        </div>
+        <figure class="shot" style="--ratio: 4 / 3">
+          <div class="shot__frame" role="img" aria-label="Photo placeholder: a full lasagna pan with one corner already gone">
+            <span class="shot__label"><span class="shot__tag">Photo</span>
+            <span class="shot__what">A full lasagna pan, one corner already gone</span>
+            <span class="shot__spec">4:3, overhead</span></span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec story field-white" id="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="sec__head g7">
+      <h2 class="sec__title display" id="story-h">Our Story</h2>
+      <p class="sec__lede">Sicily to Brooklyn to Nashville to 11th Street. One family, a lot of bread.</p>
+    </div>
+
+    <ol class="chapters">
+      <li class="ch">
+        <p class="ch__when display">Sicily</p>
+        <p class="ch__where">Where it starts</p>
+        <p class="ch__text">Corrado Savarino Sr. is born in Sicily.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display">Brooklyn</p>
+        <p class="ch__where">Age nine</p>
+        <p class="ch__text">The family moves to Brooklyn. That’s where he grows up.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display">Lower East Side</p>
+        <p class="ch__where">Veniero’s</p>
+        <p class="ch__text">He trains at Veniero’s in Manhattan. Yes, that Veniero’s.</p>
+        <figure class="shot">
+          <div class="shot__frame" role="img" aria-label="Photo placeholder: Corrado Sr. in a kitchen, any year, from the family archive">
+            <span class="shot__label"><span class="shot__tag">Photo</span>
+            <span class="shot__what">Corrado Sr. in a kitchen, any year</span>
+            <span class="shot__spec">From the family archive</span></span>
+          </div>
+        </figure>
+      </li>
+      <li class="ch">
+        <p class="ch__when display"><span class="num">2002</span></p>
+        <p class="ch__where">Nolensville Pike, Nashville</p>
+        <p class="ch__text">Savarino’s opens a bakery on Nolensville Pike.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display">Berry Hill</p>
+        <p class="ch__where">“The dump”</p>
+        <p class="ch__text">Wholesale bread comes out of a house in Berry Hill. The family calls it “the dump.” The bread was great anyway.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display"><span class="num">2006</span> to <span class="num">2017</span></p>
+        <p class="ch__where">Savarino’s Cucina, Hillsboro Village</p>
+        <p class="ch__text">Regulars get sandwiches named after them and the Sandwich Gang is born. Diners, Drive-ins and Dives stops by.</p>
+        <figure class="shot">
+          <div class="shot__frame" role="img" aria-label="Photo placeholder: the Cucina in Hillsboro Village, from the family archive">
+            <span class="shot__label"><span class="shot__tag">Photo</span>
+            <span class="shot__what">The Cucina in Hillsboro Village</span>
+            <span class="shot__spec">From the family archive</span></span>
+          </div>
+        </figure>
+      </li>
+      <li class="ch">
+        <p class="ch__when display"><span class="num">2019</span></p>
+        <p class="ch__where">W 11th St and Parker St, Columbia</p>
+        <p class="ch__text">Carmelo buys a 19th-century brick building on the corner and starts wholesale on July 4, 2019.</p>
+      </li>
+    </ol>
+  </div>
+
+  <div class="wall field-brick" data-wall>
+    <div class="wrap wall__inner">
+      <p class="wall__intro">The building had a few lives before us.</p>
+      <p class="vh">The building at W 11th and Parker was a jail, then a hotel, then an upholstery shop. Now it’s Savarino’s.</p>
+      <div class="ghost" data-ghost aria-hidden="true">
+        <div class="ghost__layer" data-layer="0" data-line="First it was a jail.">Jail</div>
+        <div class="ghost__layer" data-layer="1" data-line="Then a hotel.">Hotel</div>
+        <div class="ghost__layer" data-layer="2" data-line="Then an upholstery shop.">Upholstery</div>
+        <div class="ghost__layer" data-layer="3" data-line="Now it’s Savarino’s. The only thing doing time here is the dough.">Savarino’s</div>
+      </div>
+      <div class="wall__foot">
+        <p class="wall__caption" data-wall-caption aria-hidden="true">Jail, hotel, upholstery shop. Now it’s Savarino’s. The only thing doing time here is the dough.</p>
+        <button class="wall__replay" type="button" data-replay hidden>Paint it again</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ol class="chapters chapters--after" start="8">
+      <li class="ch">
+        <p class="ch__when display">The pandemic</p>
+        <p class="ch__where">Biscotti, by other means</p>
+        <p class="ch__text">We sell boxed biscotti through liquor stores. Don’t knock it. It kept the ovens on.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display"><span class="num">2023</span></p>
+        <p class="ch__where">The front door opens</p>
+        <p class="ch__text">Retail opens on 11th Street. Now anybody can walk in.</p>
+      </li>
+      <li class="ch">
+        <p class="ch__when display">Now</p>
+        <p class="ch__where">Carmelo, Corrado Jr. and Dad</p>
+        <p class="ch__text">Carmelo runs the place. His younger brother Corrado Jr. works right alongside him. Dad’s on the porch.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec wholesale field-white" id="wholesale" aria-labelledby="ws-h">
+  <div class="wrap">
+    <div class="sec__head g7">
+      <h2 class="sec__title display" id="ws-h">Wholesale</h2>
+      <p class="sec__lede">Restaurants: your sandwich is only as good as the roll.</p>
+    </div>
+
+    <div class="ws__grid">
+      <div class="ws__main">
+        <p class="sec__body">We’ve baked bread for restaurants since the house in Berry Hill. In Columbia we were wholesale for four years before we ever opened the front counter.</p>
+        <dl class="ws__facts">
+          <div><dt>What we bake for you</dt><dd>Italian bread and hoagie rolls. Ask about pastry and biscotti.</dd></div>
+          <div><dt>Delivery</dt><dd><span class="tbd">Area and days: confirm with owner</span></dd></div>
+          <div><dt>Email</dt><dd><span class="tbd">Wholesale email: confirm with owner</span></dd></div>
+        </dl>
+        <a class="call call--block" href="tel:+19312238335"><span>Call about wholesale</span> <span class="num">(931) 223-8335</span></a>
+      </div>
+      <figure class="shot" style="--ratio: 4 / 3">
+        <div class="shot__frame" role="img" aria-label="Photo placeholder: bread racks loaded for a restaurant run">
+          <span class="shot__label"><span class="shot__tag">Photo</span>
+          <span class="shot__what">Bread racks loaded for a restaurant run</span>
+          <span class="shot__spec">4:3, early, back door open</span></span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit field-brick" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="sec__head g7">
+      <h2 class="sec__title display" id="visit-h">Come by</h2>
+    </div>
+
+    <div class="visit__grid">
+      <div class="visit__where">
+        <p class="address display">314 W 11th St</p>
+        <p class="address-sub">Columbia, TN 38401. Corner of W 11th and Parker, in the Columbia Arts District.</p>
+        <div class="hours">
+          <p class="hours__k">Hours</p>
+          <p><span class="tbd">Hours: confirm with owner</span></p>
+          <p>Listings online disagree, so this stays blank until the family signs off.</p>
+        </div>
+        <div class="visit__actions">
+          <a class="call call--block" href="tel:+19312238335"><span>Call</span> <span class="num">(931) 223-8335</span></a>
+          <a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=314+W+11th+St+Columbia+TN+38401">Get directions</a>
+        </div>
+      </div>
+
+      <figure class="map shot" style="--ratio: 1 / 1; --ratio-m: 1 / 1">
+        <div class="shot__frame" role="img" aria-label="Map placeholder: W 11th St and Parker St, Columbia">
+          <svg viewBox="0 0 320 320" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".7">
+              <path d="M0 176H320M0 204H320"/>
+              <path d="M176 0V320M204 0V320"/>
+            </g>
+            <rect x="212" y="134" width="34" height="34" fill="#F0B43A" stroke="#1C1714" stroke-width="2"/>
+            <g fill="currentColor" font-family="League Gothic, Arial Narrow, sans-serif" font-size="20" letter-spacing="1.5">
+              <text x="16" y="196">W 11TH ST</text>
+              <text x="0" y="0" transform="translate(196 306) rotate(-90)">PARKER ST</text>
+              <text x="254" y="158">314</text>
+            </g>
+          </svg>
+          <span class="shot__label"><span class="shot__tag">Map</span>
+          <span class="shot__spec">Google Maps embed goes here at launch</span></span>
+        </div>
+      </figure>
+
+      <div class="porch">
+        <div class="porch__words">
+          <h3 class="porch__title display">The porch</h3>
+          <p class="porch__text">The table on the porch is for family. Dad’s probably at it. Say hello, then grab another chair.</p>
+        </div>
+        <figure class="shot" style="--ratio: 16 / 10">
+          <div class="shot__frame" role="img" aria-label="Photo placeholder: Corrado on the porch">
+            <span class="shot__label"><span class="shot__tag">Photo</span>
+            <span class="shot__what">Corrado on the porch</span>
+            <span class="shot__spec">16:10, afternoon, family table in frame</span></span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot field-ink">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__mark">Savarino’s</p>
+      <p>Bakery, Deli &amp; Market</p>
+    </div>
+    <p>314 W 11th St<br>Columbia, TN 38401<br><a href="tel:+19312238335" class="num" style="font-size:1.5rem;letter-spacing:.05em;text-decoration:none">(931) 223-8335</a></p>
+    <p>On TikTok: <span class="tbd">handle: confirm with owner</span></p>
+    <p class="foot__note">Homepage prototype. Anything with a dotted line is waiting on you, Carmelo.</p>
+  </div>
+</footer>
+
+<div class="callbar" data-callbar>
+  <a class="call call--block" href="tel:+19312238335" tabindex="-1"><span>Call to order</span> <span class="num">(931) 223-8335</span></a>
+</div>
+
+<script>
+(() => {
+  /* Hours: fill this in and the status goes live. Days 0 (Sun) to 6 (Sat), 24h "HH:MM". Null means placeholder. */
+  const HOURS = null; // e.g. { 1: null, 2: ["07:00", "15:00"], ... }
+  const TZ = "America/Chicago";
+
+  const now = new Date();
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: TZ, weekday: "long", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+    .formatToParts(now).map(p => [p.type, p.value]));
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const today = dayNames.indexOf(parts.weekday);
+  const todayEl = document.querySelector("[data-today]");
+  if (todayEl) todayEl.textContent = parts.weekday;
+
+  if (HOURS && today > -1) {
+    const status = document.querySelector("[data-status]");
+    const mins = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+    const fmt = t => { const [h, m] = t.split(":").map(Number); const hh = ((h + 11) % 12) + 1; return hh + (m ? ":" + String(m).padStart(2, "0") : "") + (h < 12 ? " AM" : " PM"); };
+    const cur = Number(parts.hour) * 60 + Number(parts.minute);
+    const span = HOURS[today];
+    let text;
+    if (span && cur >= mins(span[0]) && cur < mins(span[1])) text = `${parts.weekday}. Open now, till ${fmt(span[1])}.`;
+    else {
+      let next = null;
+      for (let i = 0; i < 7 && !next; i++) {
+        const d = (today + i) % 7, s = HOURS[d];
+        if (s && (i > 0 || cur < mins(s[0]))) next = i === 0 ? `today at ${fmt(s[0])}` : `${dayNames[d]} at ${fmt(s[0])}`;
+      }
+      text = `${parts.weekday}. Closed right now.` + (next ? ` Opens ${next}.` : "");
+    }
+    status.textContent = text;
+  }
+
+  /* Sticky call bar once the hero's button scrolls away */
+  const bar = document.querySelector("[data-callbar]");
+  const heroCall = document.querySelector("[data-hero-call]");
+  if (bar && heroCall && "IntersectionObserver" in window) {
+    const barLink = bar.querySelector("a");
+    new IntersectionObserver(([e]) => {
+      const on = !e.isIntersecting && e.boundingClientRect.top < 0;
+      bar.classList.toggle("is-on", on);
+      barLink.tabIndex = on ? 0 : -1;
+    }).observe(heroCall);
+  }
+
+  /* The wall repaints itself: jail, hotel, upholstery, Savarino's */
+  const ghost = document.querySelector("[data-ghost]");
+  const caption = document.querySelector("[data-wall-caption]");
+  const replay = document.querySelector("[data-replay]");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!ghost || still || !("IntersectionObserver" in window)) return;
+
+  const layers = [...ghost.querySelectorAll(".ghost__layer")];
+  layers.forEach(layer => {
+    const word = layer.textContent;
+    layer.textContent = "";
+    [...word].forEach((c, i) => {
+      const s = document.createElement("span");
+      s.className = "lt";
+      s.style.setProperty("--i", i);
+      s.textContent = c;
+      layer.append(s);
+    });
+  });
+
+  const STAGGER = 70, STROKE = 340, HOLD = 750;
+  const finalCaption = caption.textContent;
+  let timers = [];
+  const clear = () => { timers.forEach(clearTimeout); timers = []; };
+
+  const arm = () => {
+    clear();
+    ghost.classList.add("is-armed");
+    layers.forEach(l => l.classList.remove("is-painting", "is-ghost"));
+    caption.textContent = " ";
+    replay.hidden = true;
+  };
+
+  const paint = () => {
+    arm();
+    let t = 120;
+    layers.forEach((layer, i) => {
+      timers.push(setTimeout(() => {
+        if (i > 0) layers[i - 1].classList.add("is-ghost");
+        layer.classList.add("is-painting");
+        caption.textContent = layer.dataset.line;
+      }, t));
+      t += layer.children.length * STAGGER + STROKE + (i === layers.length - 1 ? 0 : HOLD);
+    });
+    timers.push(setTimeout(() => { replay.hidden = false; }, t + 200));
+  };
+
+  const inView = el => { const r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; };
+  if (!inView(ghost)) arm();
+
+  let played = false;
+  new IntersectionObserver(([e], io) => {
+    if (e.isIntersecting && !played) { played = true; paint(); io.disconnect(); }
+  }, { threshold: 0.55 }).observe(ghost);
+
+  replay.addEventListener("click", paint);
+  if (!played && inView(ghost)) { caption.textContent = finalCaption; replay.hidden = false; }
+})();
+</script>
+</body>
+</html>
