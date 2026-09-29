@@ -34,7 +34,6 @@
   --ink: #1C1714;
   --ink-2: #5A4E47;
   --brick: #8F3421;
-  --brick-shade: #7C2C1B;
   --ochre: #F0B43A;
   --on-brick-2: #F4DCD3;
   --on-ink-2: #D9CFC8;
@@ -42,12 +41,11 @@
   --rule-light: rgba(255, 255, 255, .26);
 
   /* 8px rhythm, stepped on primes */
-  --s1: 8px; --s2: 16px; --s3: 24px; --s5: 40px; --s7: 56px; --s12: 96px; --s14: 112px;
+  --s2: 16px; --s3: 24px; --s5: 40px; --s7: 56px; --s12: 96px; --s14: 112px;
   --gutter: clamp(16px, 5vw, 56px);
   --col-gap: 24px;
 
   /* √2 type scale */
-  --t0: 0.8125rem;
   --t1: 1.0625rem;
   --t2: clamp(1.4375rem, 1.3rem + .5vw, 1.5625rem);
   --t3: clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);
@@ -88,6 +86,7 @@ a:hover { text-decoration-thickness: 3px; }
 .wrap { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
 .display { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .005em; }
 .num { font-family: var(--f-display); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.num--street { font-size: 1.3em; letter-spacing: .04em; }
 h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 
@@ -164,8 +163,7 @@ p { text-wrap: pretty; }
 .sec__title { font-size: var(--t5); }
 .field-white .sec__title { color: var(--brick); }
 .sec__lede { font-size: var(--t2); line-height: 1.35; max-width: 30ch; }
-.sec__body { max-width: 62ch; }
-.sec__body { color: var(--text-2); }
+.sec__body { max-width: 62ch; color: var(--text-2); }
 
 /* ============ HERO ============ */
 .hero { padding-block: var(--s2) var(--s5); }
@@ -321,6 +319,7 @@ p { text-wrap: pretty; }
 .foot .foot__mark { font-family: var(--f-display); font-size: var(--t5); line-height: .9; text-transform: uppercase; color: var(--ochre); }
 .foot p { color: var(--on-ink-2); }
 .foot a { color: var(--white); }
+.foot__phone { font-size: 1.5rem; letter-spacing: .05em; text-decoration: none; }
 .foot__note { font-size: .9375rem; padding-top: var(--s3); border-top: 1px solid var(--rule-light); }
 
 /* Sticky call bar, phones only */
@@ -477,7 +476,7 @@ p { text-wrap: pretty; }
         </div>
         <div class="fact">
           <dt class="fact__k">Find us</dt>
-          <dd class="fact__v"><span class="num" style="font-size:1.3em;letter-spacing:.04em">314</span> W 11th St, Columbia, TN<br><a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=314+W+11th+St+Columbia+TN+38401">Directions</a></dd>
+          <dd class="fact__v"><span class="num num--street">314</span> W 11th St, Columbia, TN<br><a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=314+W+11th+St+Columbia+TN+38401">Directions</a></dd>
         </div>
       </dl>
 
@@ -829,7 +828,7 @@ p { text-wrap: pretty; }
       <p class="foot__mark">Savarino’s</p>
       <p>Bakery, Deli &amp; Market</p>
     </div>
-    <p>314 W 11th St<br>Columbia, TN 38401<br><a href="tel:+19312238335" class="num" style="font-size:1.5rem;letter-spacing:.05em;text-decoration:none">(931) 223-8335</a></p>
+    <p>314 W 11th St<br>Columbia, TN 38401<br><a href="tel:+19312238335" class="num foot__phone">(931) 223-8335</a></p>
     <p>On TikTok: <span class="tbd">handle: confirm with owner</span></p>
     <p class="foot__note">Homepage prototype. Anything with a dotted line is waiting on you, Carmelo.</p>
   </div>
