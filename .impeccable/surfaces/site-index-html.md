@@ -1,11 +1,11 @@
 ---
 version: 1
-slug: "index-html"
-primary_target: "index.html"
+slug: "site-index-html"
+primary_target: "site/index.html"
 related_targets: []
 ---
 
-# Homepage (index.html)
+# Homepage (site/index.html)
 
 Scope: single-page homepage prototype, mobile-first. Mode: Persuade (brand register).
 Audience: the owner first (cold pitch, phone, five seconds), then locals, Nashville day-trippers, restaurant buyers.
