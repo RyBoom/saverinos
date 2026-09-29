@@ -58,7 +58,7 @@
   --f-display: "League Gothic", "Arial Narrow", sans-serif;
   --f-text: "Besley", Georgia, serif;
 
-  --brick-course: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'/%3E%3C/svg%3E");
+  --brick-course: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -92,9 +92,13 @@ h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
 
 /* Fields */
-.field-brick { background-color: var(--brick); background-image: var(--brick-course); color: var(--white); --focus: var(--ochre); --pounce: var(--white); --pounce-bg: var(--brick); --pounce-ink: var(--white); }
-.field-ink { background: var(--ink); color: var(--white); --focus: var(--ochre); --pounce: var(--ochre); --pounce-bg: var(--ink); --pounce-ink: var(--white); }
-.field-white { background: var(--white); color: var(--ink); --focus: var(--ink); --pounce: var(--brick); --pounce-bg: var(--white); --pounce-ink: var(--ink); }
+.field-brick { background-color: var(--brick); background-image: var(--brick-course); color: var(--white); --focus: var(--ochre); --pounce: var(--white); --pounce-ink: var(--white); --text-2: var(--on-brick-2); --rule: var(--rule-light); }
+.field-ink { background: var(--ink); color: var(--white); --focus: var(--ochre); --pounce: var(--ochre); --pounce-ink: var(--white); --text-2: var(--on-ink-2); --rule: var(--rule-light); }
+.field-white { background: var(--white); color: var(--ink); --focus: var(--ink); --pounce: var(--brick); --pounce-ink: var(--ink); --text-2: var(--ink-2); --rule: var(--rule-ink); }
+
+.hero, .wall { position: relative; isolation: isolate; background-image: none; }
+.hero::after, .wall::after { content: ""; position: absolute; inset: 0; z-index: 1; background-image: var(--brick-course); pointer-events: none; }
+.hero .nav, .hero__grid, .wall__intro, .wall__foot { position: relative; z-index: 2; }
 
 /* Call button: ochre paint, ink keyline */
 .call {
@@ -136,13 +140,19 @@ p { text-wrap: pretty; }
   text-align: center;
   isolation: isolate;
 }
-.shot__frame::before, .shot__frame::after {
-  content: ""; position: absolute; z-index: -1; opacity: .3;
+.shot__frame::before, .shot__frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.shot__frame::before {
+  background:
+    repeating-linear-gradient(to bottom, currentColor 0 2px, transparent 2px 6px) 50% 10px / 2px 22px no-repeat,
+    repeating-linear-gradient(to bottom, currentColor 0 2px, transparent 2px 6px) 50% calc(100% - 10px) / 2px 22px no-repeat;
 }
-.shot__frame::before { left: 12px; right: 12px; top: 50%; border-top: 2px dotted currentColor; }
-.shot__frame::after { top: 12px; bottom: 12px; left: 50%; border-left: 2px dotted currentColor; }
-.shot__label { display: grid; gap: 6px; justify-items: center; padding: 10px 14px 12px; background: var(--pounce-bg); max-width: 22rem; }
-.shot__tag { font-family: var(--f-display); font-size: 1.375rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1; }
+.shot__frame::after {
+  background:
+    repeating-linear-gradient(to right, currentColor 0 2px, transparent 2px 6px) 10px 50% / 22px 2px no-repeat,
+    repeating-linear-gradient(to right, currentColor 0 2px, transparent 2px 6px) calc(100% - 10px) 50% / 22px 2px no-repeat;
+}
+.shot__label { display: grid; gap: 8px; justify-items: center; padding: 8px 40px; max-width: 24rem; }
+.shot__kind { font-family: var(--f-display); font-weight: 400; font-size: 1.15em; letter-spacing: .06em; text-transform: uppercase; color: var(--pounce); }
 .shot__what {
   font-size: var(--t2); font-weight: 600; line-height: 1.3; max-width: 20ch; color: var(--pounce-ink);
 }
@@ -155,12 +165,17 @@ p { text-wrap: pretty; }
 .field-white .sec__title { color: var(--brick); }
 .sec__lede { font-size: var(--t2); line-height: 1.35; max-width: 30ch; }
 .sec__body { max-width: 62ch; }
-.field-white .sec__body { color: var(--ink-2); }
+.sec__body { color: var(--text-2); }
 
 /* ============ HERO ============ */
 .hero { padding-block: var(--s2) var(--s5); }
 .nav { display: flex; flex-wrap: wrap; gap: 0 16px; font-family: var(--f-display); font-size: 1.1875rem; letter-spacing: .07em; text-transform: uppercase; line-height: 1.3; }
-.nav a { text-decoration: none; display: inline-block; padding-block: 6px; }
+.nav a { text-decoration: none; display: inline-block; padding-block: 6px; white-space: nowrap; }
+@media (max-width: 719px) {
+  .nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; font-size: 1.0625rem; color: var(--on-brick-2); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
+    -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
+  .nav::-webkit-scrollbar { display: none; }
+}
 .nav a:hover { text-decoration: underline; text-decoration-color: var(--ochre); }
 .sign { margin-top: var(--s3); container-type: inline-size; }
 .wordmark {
@@ -185,9 +200,10 @@ p { text-wrap: pretty; }
 /* ============ PROOF ============ */
 .proof { padding-block: var(--s12) var(--s12); }
 .proof__grid { display: grid; gap: var(--s7); }
-.quote { font-size: var(--t4); font-weight: 800; line-height: 1.08; letter-spacing: -.01em; max-width: 14ch; text-indent: -.44em; }
+.quote { font-size: var(--t4); font-weight: 800; line-height: 1.08; letter-spacing: -.01em; max-width: 14ch; }
+@media (min-width: 600px) { .quote { text-indent: -.44em; } }
 .quote__mark { color: var(--brick); }
-.quote-by { margin-top: var(--s3); font-size: var(--t1); color: var(--ink-2); }
+.quote-by { margin-top: var(--s3); font-size: var(--t1); color: var(--text-2); }
 .quote-by strong { color: var(--ink); font-weight: 600; }
 .creds { margin-top: var(--s5); display: grid; border-top: 1px solid var(--rule-ink); }
 .creds li { padding-block: var(--s2); border-bottom: 1px solid var(--rule-ink); }
@@ -219,21 +235,19 @@ p { text-wrap: pretty; }
 .good { align-content: start; padding-block: var(--s2) 18px; border-bottom: 1px solid var(--rule-ink); }
 .good:first-child { padding-top: 0; }
 .good__name { font-family: var(--f-display); font-weight: 400; font-size: var(--t3); text-transform: uppercase; letter-spacing: .02em; line-height: 1; }
-.good__line { margin-top: 6px; color: var(--ink-2); max-width: 46ch; }
+.good__line { margin-top: 6px; color: var(--text-2); max-width: 46ch; }
 .counter-note { padding-top: var(--s5); border-top: 2px solid var(--ink); display: grid; gap: var(--s2); }
 .counter-note p:first-child { font-size: var(--t2); line-height: 1.35; font-weight: 600; max-width: 36ch; }
 
 /* ============ PANS & CAKES ============ */
-.pans { border-top: 1px solid var(--rule-ink); }
-.pans__big { font-size: var(--t6); color: var(--brick); }
+
 .pans__grid { display: grid; gap: var(--s5); }
-.pan-list { display: grid; border-top: 1px solid var(--rule-ink); }
-.pan { display: grid; gap: 6px; align-content: start; padding-block: var(--s3); border-bottom: 1px solid var(--rule-ink); }
+.pan-list { display: grid; align-self: start; align-content: start; border-top: 1px solid var(--rule); }
+.pan { display: grid; gap: 6px; align-content: start; padding-block: var(--s3); border-bottom: 1px solid var(--rule); }
 .pan__name { font-family: var(--f-display); font-weight: 400; font-size: var(--t3); text-transform: uppercase; letter-spacing: .02em; line-height: 1; }
-.pan__line { color: var(--ink-2); }
+.pan__line { color: var(--text-2); }
 .pans__side { display: grid; gap: var(--s5); align-content: start; }
 .preorder { display: grid; gap: var(--s2); align-content: start; }
-.preorder__k { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; }
 
 /* ============ STORY ============ */
 .story { border-top: 1px solid var(--rule-ink); }
@@ -242,7 +256,7 @@ p { text-wrap: pretty; }
 .chapters--after { border-top: 0; }
 .ch__when { font-size: var(--t4); color: var(--brick); }
 .ch__where { font-weight: 600; }
-.ch__text { max-width: 46ch; color: var(--ink-2); }
+.ch__text { max-width: 46ch; color: var(--text-2); }
 .ch .shot { margin-top: var(--s3); max-width: 420px; }
 
 /* The wall repaints itself */
@@ -280,11 +294,9 @@ p { text-wrap: pretty; }
 .ws__facts { display: grid; border-top: 1px solid var(--rule-ink); }
 .ws__facts div { display: grid; gap: 4px; padding-block: var(--s2); border-bottom: 1px solid var(--rule-ink); }
 .ws__facts dt { font-family: var(--f-display); font-size: 1.3125rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; }
-.ws__facts dd { color: var(--ink-2); }
+.ws__facts dd { color: var(--text-2); }
 
 /* ============ VISIT ============ */
-.visit .sec__title { color: var(--ochre); font-size: var(--t5); }
-.visit .sec__head { margin-bottom: var(--s3); }
 .address { font-size: var(--t6); line-height: .86; }
 .address-sub { margin-top: var(--s2); font-size: var(--t2); line-height: 1.35; }
 .visit__grid { display: grid; gap: var(--s7); }
@@ -296,7 +308,8 @@ p { text-wrap: pretty; }
 .map .shot__frame { place-content: start; padding: var(--s2); }
 .map .shot__frame::before, .map .shot__frame::after { display: none; }
 .map svg { position: absolute; inset: var(--s3); width: calc(100% - 2 * var(--s3)); height: calc(100% - 2 * var(--s3)); }
-.map .shot__label { justify-items: start; position: relative; text-align: left; }
+.map .shot__label { justify-items: start; position: relative; text-align: left; padding: 0; }
+.map .shot__what { font-size: 1rem; max-width: 14ch; }
 .porch { display: grid; gap: var(--s3); padding-top: var(--s5); border-top: 3px solid var(--white); }
 .porch__words { display: grid; gap: var(--s2); }
 .porch__title { font-size: var(--t4); }
@@ -470,7 +483,7 @@ p { text-wrap: pretty; }
 
       <div class="hero__cta">
         <a class="call call--block" href="tel:+19312238335" data-hero-call><span>Call to order</span> <span class="num">(931) 223-8335</span></a>
-        <p class="hero__cta-note">Sandwiches, pans, cakes, bread. A person picks up.</p>
+        <p class="hero__cta-note">For sandwiches, family pans, cakes and bread.</p>
       </div>
     </div>
   </div>
@@ -490,8 +503,7 @@ p { text-wrap: pretty; }
     </div>
     <figure class="shot" style="--ratio: 4 / 3">
       <div class="shot__frame" role="img" aria-label="Photo placeholder: the brick building at 11th and Parker">
-        <span class="shot__label"><span class="shot__tag">Photo</span>
-        <span class="shot__what">The brick building at 11th and Parker, porch in frame</span>
+        <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> The brick building at 11th and Parker, porch in frame</span>
         <span class="shot__spec">4:3, morning light from across the street</span></span>
       </div>
     </figure>
@@ -504,20 +516,19 @@ p { text-wrap: pretty; }
       <div class="sec__head g7">
         <h2 class="sec__title display" id="board-h">The Board</h2>
         <p class="sec__lede">At the Cucina, the sandwiches were named after the regulars. We called them the Sandwich Gang.</p>
-        <p class="sec__body">Made to order. Call it in and it’s ready when you walk up.</p>
+        <p class="sec__body">Made to order. Call it in.</p>
       </div>
 
       <ol class="menu">
         <li class="item item--star">
           <div class="item__text">
             <h3 class="item__name display">The Palermo</h3>
-            <p class="item__line">Rose Palermo, attorney, was the only woman in the Sandwich Gang. She told us her sandwich was going on the board. She won that one.</p>
+            <p class="item__line">Rose Palermo, attorney, was the only woman in the Sandwich Gang. She told us her sandwich was going on the board. It’s still on it.</p>
             <p class="since">On the board since the Cucina</p>
           </div>
           <figure class="shot" style="--ratio: 4 / 3">
             <div class="shot__frame" role="img" aria-label="Photo placeholder: the Palermo, cut in half, on deli paper">
-              <span class="shot__label"><span class="shot__tag">Photo</span>
-              <span class="shot__what">The Palermo, cut in half, on deli paper</span>
+              <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> The Palermo, cut in half, on deli paper</span>
               <span class="shot__spec">4:3, overhead, on the counter</span></span>
             </div>
           </figure>
@@ -564,8 +575,7 @@ p { text-wrap: pretty; }
       </ul>
       <figure class="shot">
         <div class="shot__frame" role="img" aria-label="Photo placeholder: sfogliatelle in the case">
-          <span class="shot__label"><span class="shot__tag">Photo</span>
-          <span class="shot__what">Sfogliatelle in the case</span>
+          <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Sfogliatelle in the case</span>
           <span class="shot__spec">4:5, through the glass</span></span>
         </div>
       </figure>
@@ -580,8 +590,7 @@ p { text-wrap: pretty; }
       </ul>
       <figure class="shot">
         <div class="shot__frame" role="img" aria-label="Photo placeholder: rainbow cookies stacked, cut side out">
-          <span class="shot__label"><span class="shot__tag">Photo</span>
-          <span class="shot__what">Rainbow cookies stacked, cut side out</span>
+          <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Rainbow cookies stacked, cut side out</span>
           <span class="shot__spec">4:5, tight, on the tray</span></span>
         </div>
       </figure>
@@ -595,8 +604,7 @@ p { text-wrap: pretty; }
       </ul>
       <figure class="shot" style="--ratio: 21 / 9">
         <div class="shot__frame" role="img" aria-label="Photo placeholder: bread coming out of the oven">
-          <span class="shot__label"><span class="shot__tag">Photo</span>
-          <span class="shot__what">Bread coming out of the oven</span>
+          <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Bread coming out of the oven</span>
           <span class="shot__spec">Wide, steam and all</span></span>
         </div>
       </figure>
@@ -608,7 +616,7 @@ p { text-wrap: pretty; }
   </div>
 </section>
 
-<section class="sec pans field-white" id="pans" aria-labelledby="pans-h">
+<section class="sec pans field-brick" id="pans" aria-labelledby="pans-h">
   <div class="wrap">
     <div class="sec__head g7">
       <h2 class="sec__title display" id="pans-h">Family Pans &amp; Cakes</h2>
@@ -625,14 +633,12 @@ p { text-wrap: pretty; }
 
       <div class="pans__side">
         <div class="preorder">
-          <p class="preorder__k">Order ahead</p>
           <p><span class="tbd">Lead time: confirm with owner</span></p>
           <a class="call call--block" href="tel:+19312238335"><span>Call to pre-order</span> <span class="num">(931) 223-8335</span></a>
         </div>
         <figure class="shot" style="--ratio: 4 / 3">
           <div class="shot__frame" role="img" aria-label="Photo placeholder: a full lasagna pan with one corner already gone">
-            <span class="shot__label"><span class="shot__tag">Photo</span>
-            <span class="shot__what">A full lasagna pan, one corner already gone</span>
+            <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> A full lasagna pan, one corner already gone</span>
             <span class="shot__spec">4:3, overhead</span></span>
           </div>
         </figure>
@@ -665,8 +671,7 @@ p { text-wrap: pretty; }
         <p class="ch__text">He trains at Veniero’s in Manhattan. Yes, that Veniero’s.</p>
         <figure class="shot">
           <div class="shot__frame" role="img" aria-label="Photo placeholder: Corrado Sr. in a kitchen, any year, from the family archive">
-            <span class="shot__label"><span class="shot__tag">Photo</span>
-            <span class="shot__what">Corrado Sr. in a kitchen, any year</span>
+            <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Corrado Sr. in a kitchen, any year</span>
             <span class="shot__spec">From the family archive</span></span>
           </div>
         </figure>
@@ -687,8 +692,7 @@ p { text-wrap: pretty; }
         <p class="ch__text">Regulars get sandwiches named after them and the Sandwich Gang is born. Diners, Drive-ins and Dives stops by.</p>
         <figure class="shot">
           <div class="shot__frame" role="img" aria-label="Photo placeholder: the Cucina in Hillsboro Village, from the family archive">
-            <span class="shot__label"><span class="shot__tag">Photo</span>
-            <span class="shot__what">The Cucina in Hillsboro Village</span>
+            <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> The Cucina in Hillsboro Village</span>
             <span class="shot__spec">From the family archive</span></span>
           </div>
         </figure>
@@ -758,8 +762,7 @@ p { text-wrap: pretty; }
       </div>
       <figure class="shot" style="--ratio: 4 / 3">
         <div class="shot__frame" role="img" aria-label="Photo placeholder: bread racks loaded for a restaurant run">
-          <span class="shot__label"><span class="shot__tag">Photo</span>
-          <span class="shot__what">Bread racks loaded for a restaurant run</span>
+          <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Bread racks loaded for a restaurant run</span>
           <span class="shot__spec">4:3, early, back door open</span></span>
         </div>
       </figure>
@@ -769,13 +772,9 @@ p { text-wrap: pretty; }
 
 <section class="sec visit field-brick" id="visit" aria-labelledby="visit-h">
   <div class="wrap">
-    <div class="sec__head g7">
-      <h2 class="sec__title display" id="visit-h">Come by</h2>
-    </div>
-
     <div class="visit__grid">
       <div class="visit__where">
-        <p class="address display">314 W 11th St</p>
+        <h2 class="address display" id="visit-h">314 W 11th St</h2>
         <p class="address-sub">Columbia, TN 38401. Corner of W 11th and Parker, in the Columbia Arts District.</p>
         <div class="hours">
           <p class="hours__k">Hours</p>
@@ -802,8 +801,7 @@ p { text-wrap: pretty; }
               <text x="254" y="158">314</text>
             </g>
           </svg>
-          <span class="shot__label"><span class="shot__tag">Map</span>
-          <span class="shot__spec">Google Maps embed goes here at launch</span></span>
+          <span class="shot__label"><span class="shot__what"><span class="shot__kind">Map:</span> Google Maps embed at launch</span></span>
         </div>
       </figure>
 
@@ -813,9 +811,8 @@ p { text-wrap: pretty; }
           <p class="porch__text">The table on the porch is for family. Dad’s probably at it. Say hello, then grab another chair.</p>
         </div>
         <figure class="shot" style="--ratio: 16 / 10">
-          <div class="shot__frame" role="img" aria-label="Photo placeholder: Corrado on the porch">
-            <span class="shot__label"><span class="shot__tag">Photo</span>
-            <span class="shot__what">Corrado on the porch</span>
+          <div class="shot__frame" role="img" aria-label="Photo placeholder: Corrado Sr. on the porch">
+            <span class="shot__label"><span class="shot__what"><span class="shot__kind">Photo:</span> Corrado Sr. on the porch</span>
             <span class="shot__spec">16:10, afternoon, family table in frame</span></span>
           </div>
         </figure>
