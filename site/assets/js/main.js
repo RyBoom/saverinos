@@ -44,8 +44,7 @@
     var open = h[0] * 60, close = h[1] * 60;
     if (now.minutes >= open && now.minutes < close) {
       var left = close - now.minutes;
-      var text = "Open now until " + clock(h[1]);
-      if (left <= 60) text += ". Closing soon.";
+      var text = left <= 60 ? "Open until " + clock(h[1]) + ". Closing soon." : "Open now until " + clock(h[1]);
       return { open: true, text: text };
     }
     if (now.minutes < open) return { open: false, text: "Closed. Opens at " + clock(h[0]) + " today" };
@@ -69,12 +68,13 @@
 
   /* ---------- Header: logo takes over once the hero logo has scrolled away ---------- */
   var heroLogo = document.querySelector("[data-hero-logo]");
+  var pageEl = document.querySelector(".home") || body;
   if (heroLogo && "IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
-      body.classList.toggle("past-hero", !entries[0].isIntersecting);
+      pageEl.classList.toggle("past-hero", !entries[0].isIntersecting);
     }, { rootMargin: "-72px 0px 0px 0px" }).observe(heroLogo);
   } else if (heroLogo) {
-    body.classList.add("past-hero");
+    pageEl.classList.add("past-hero");
   }
 
   /* ---------- Mobile nav ---------- */
