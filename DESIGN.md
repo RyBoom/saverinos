@@ -275,13 +275,13 @@ Square, 52px minimum height, 0 28px padding, Montserrat 700 at 0.875rem, 0.12em 
 - Navy text on the teal button is mandatory; ivory on teal fails contrast.
 
 ### Header
-Ivory bar, 60px on phones, 76px sticky at 56rem with a hairline that appears once past the hero (always on the menu page). **Logo swap:** on the homepage the logo is hidden while the hero logo is visible and the small "place" line shows in navy-2; once the hero logo scrolls out (IntersectionObserver, 72px margin) they cross-fade over 300ms. Elsewhere the 48px logo shows. Nav links are 0.8125rem caps with a 3px teal underline for hover and current page. A 44px square toggle opens a full-width panel of 56px rows on phones, where the current page gets a saffron dot with navy ring.
+Ivory bar, 60px on phones, 76px sticky at 56rem with a hairline that appears once past the hero (always on the menu page). **Logo swap:** on the homepage the logo is hidden while the hero logo is visible and the small "place" line shows in navy-2; once the hero logo scrolls out (IntersectionObserver, 72px margin) they swap in sequence: the place line fades out in 100ms, then the logo fades in over 220ms. The hidden logo is `visibility: hidden`, so it is out of the tab order. A tiny inline script in the head flips `no-js` to `js` before first paint so the logo never flashes. Elsewhere the 48px logo shows. Nav links are 0.8125rem caps with a 3px teal underline for hover and current page. A 44px square toggle opens a full-width panel of 56px rows on phones, where the current page gets a saffron dot with navy ring.
 
 ### Sign words list
 The eight words as a centered caps list with a 6 to 7px saffron dot between neighbors, never after the last item in a row. Links underline in teal 2px on hover. Reused in the footer at a smaller size.
 
 ### Sign blocks
-Hairless grid cells separated by 1px teal rules, each a full-cell link with a serif word, a short description in navy-2, and a 34 by 16px arrow that nudges 6px right on hover. At 56rem, minimum height 220px, a 7px saffron dot sits on each junction. **Featured navy cells** (`block--star`: Sandwiches and Pastries) invert to navy ground, ivory word, ivory-on-navy description, saffron arrow, and lift to navy-lift on hover. Two featured cells per page at most. Each row has a serif row label underlined with a 2px navy dotted line.
+Hairless grid cells separated by 1px teal rules, each a full-cell link with a serif word, a short description in navy-2, and a 34 by 16px arrow that stays still (the hover state is the 180ms background wash alone). Each heading is sized by its word (a per word scale from 1.0 to 1.5 of the subtitle step) so short words fill their cell like sign lettering. At 56rem, minimum height 220px, a 7px saffron dot sits on each junction. **Featured navy cells** (`block--star`: Sandwiches and Pastries) invert to navy ground, ivory word, ivory-on-navy description, saffron arrow, and lift to navy-lift on hover. Two featured cells per page at most. Each row has a serif row label underlined with a 2px navy dotted line.
 
 ### Framed panel
 2px teal border on ivory with corner flourishes on all four corners, generous padding (2.5rem by 1.5rem; the form variant 4.25rem vertical, 2.5rem horizontal at 56rem to clear the ornaments). Houses the order and inquiry forms.
@@ -308,14 +308,14 @@ Mobile fixed bottom bar, grid 1.2fr 1fr 1fr, navy with a 3px teal top border, 60
 Navy footer: ivory plate holding the logo, caps word list, four columns (address, hours with dotted leaders, social, map), tile band, then a navy legal line in ivory-on-navy. Column heads are serif with a 1px teal underline.
 
 ### Cannoli (signature delight)
-A button-wrapped engraving of an empty shell with two fill images clipped by circles that grow from each open end. Fill takes 1500ms on `cubic-bezier(0.25, 0.8, 0.35, 1)`, the right side delayed 350ms, circles grow to 46 percent radius. A "Fill it / Start over" button and a status line (aria-pressed, live text) mirror it. Without script the finished full cannoli shows. Reduced motion collapses the transition to near zero.
+An aria-hidden engraving of an empty shell with two fill images clipped by circles that grow from each open end. Filling takes 1500ms on `cubic-bezier(0.4, 0, 0.2, 1)`, the right side delayed 350ms, circles grow to 46 percent radius. Emptying is a quick 450ms with no delay. The single accessible control is the "Fill it / Do it again" button. A serif status caption under the picture says "Empty shell. Waiting on you.", then "Filling it.", and only when the fill lands "Filled. Now come get one." (about 1400ms; instant under reduced motion), at which point a "See Pastries" link appears. The picture itself also toggles on click as a mouse and touch shortcut. Without script the finished full cannoli shows. Reduced motion collapses the transition to near zero.
 
 ### Placeholders and quote slots
 Dashed 1px teal frames on ivory-deep with centered caps text naming the exact shot (4/3, 16/9). Quote slots use a dashed teal frame and an oversized teal serif opening quote on a ivory knock-out patch.
 
 ## Motion
 
-One easing: `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease`), an out-expo. Durations: 180ms for button color, 200ms for block hover, 240ms for arrow nudge, 300ms for the header logo cross-fade. The cannoli fill is the only long motion (1500ms). Smooth scroll with an 88px scroll padding for the sticky header. All transitions drop to 0.01ms under `prefers-reduced-motion`.
+One easing: `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease`), an out-expo. Durations: one `--dur` of 180ms for button color, block hover and the header hairline, and 100 to 220ms for the header logo swap. The cannoli fill is the only long motion (1500ms). No smooth scrolling (it scrubbed through the menu on every word link), no arrow nudges. Anchor landings use scroll margins that match what is sticky: 57px for the phone category strip, 88px for the desktop header. All transitions drop to 0.01ms under `prefers-reduced-motion`.
 
 ## Do's and Don'ts
 

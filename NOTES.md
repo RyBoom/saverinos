@@ -21,7 +21,9 @@ A two page concept (Homepage, Menu) for Carmelo Savarino. These notes are for wh
 - The open or closed line is computed from the hours in Central time. Add `?now=2026-10-10T16:30` to the address to preview any moment (read as Central time).
 - Tap to call in the hero, the sticky mobile bar, the header and the footer. Directions open Google Maps.
 - Designer notes (the gold boxes) can be hidden with the button in the top bar. They are remembered per browser.
-- Both forms check their fields and show a confirmation. They do not send anything yet.
+- Both forms check their fields (a real phone number, a date that is not in the past) and show a confirmation. They do not send anything yet.
+- The hero says "Yes, we're open." only while the shop is actually open. When it is closed the line disappears and the status line says when you reopen.
+- On short phones (under 800px tall) the two hero buttons hide so the address and phone stay above the bottom bar; the bar already carries Directions and Menu.
 
 ## CONFIRM WITH OWNER
 
@@ -46,6 +48,10 @@ Every one of these is also marked on the page in a gold box.
 17. **Headline and voice.** The hero line and every other line of copy.
 
 ## What to replace before launch
+
+- The `noindex` meta tag in both page heads. Remove it, or the site will not appear in search. It is there so the concept does not get indexed under the real business name.
+- `SITE_URL` in `tools/build_pages.py`, then rerun the script. Set it to the deployed origin so the link preview image works. The images are `assets/img/og.png`, `apple-touch-icon.png` and `favicon-32.png`.
+- The form confirmation heading reads "Nothing sent yet." because the forms send nothing. Change it back to a real confirmation when the handlers are wired.
 
 - Placeholder photo frames, review slots and `$00` prices.
 - The form handlers. The simplest route on Cloudflare Pages is a Pages Function that emails the family, or a form service pointed at the family inbox.

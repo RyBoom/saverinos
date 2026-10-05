@@ -30,8 +30,8 @@
       { "name": "dock-current", "value": "inset 0 -4px 0 #f1b21c", "purpose": "Inset saffron underline for the current dock tab. The only shadow in the build." }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing: 180ms buttons, 200ms block hover, 240ms arrow nudge, 300ms header logo cross-fade." },
-      { "name": "cannoli-fill", "value": "1500ms cubic-bezier(0.25, 0.8, 0.35, 1)", "purpose": "The one delight moment. Circle clip-path grows from each end; right side delayed 350ms." },
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing: 180ms (--dur) for buttons, block hover and the header hairline; 100 to 220ms for the header logo swap." },
+      { "name": "cannoli-fill", "value": "1500ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "The one delight moment. Circle clip-path grows from each end; right side delayed 350ms. Emptying is 450ms with no delay." },
       { "name": "reduced-motion", "value": "0.01ms", "purpose": "All transitions and animations collapse under prefers-reduced-motion." }
     ],
     "breakpoints": [
