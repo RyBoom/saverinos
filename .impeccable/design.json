@@ -1,389 +1,208 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-29T20:56:48+00:00",
-  "title": "Design System: Savarino's",
+  "generatedAt": "2026-10-05T21:00:00+00:00",
+  "title": "Design System: Savarino's Market",
   "extensions": {
     "colorMeta": {
-      "white": {
-        "role": "neutral",
-        "displayName": "Painted White",
-        "canonical": "oklch(100% 0 0)",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#252525",
-          "#424242",
-          "#616161",
-          "#828282",
-          "#A5A5A5",
-          "#C9C9C9",
-          "#EEEEEE"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Lamp-Black",
-        "canonical": "oklch(20.9% 0.010 52.9)",
-        "tonalRamp": [
-          "#0F0A07",
-          "#292421",
-          "#46413D",
-          "#66605C",
-          "#87817D",
-          "#AAA39F",
-          "#CFC7C3",
-          "#F4EDE8"
-        ]
-      },
-      "ink-2": {
-        "role": "neutral",
-        "displayName": "Worn Ink",
-        "canonical": "oklch(43.4% 0.020 52.2)",
-        "tonalRamp": [
-          "#120904",
-          "#2D221C",
-          "#4B3F38",
-          "#6B5E57",
-          "#8C7F78",
-          "#B0A29A",
-          "#D4C6BE",
-          "#FAEBE3"
-        ]
-      },
-      "brick": {
-        "role": "secondary",
-        "displayName": "Eleventh Street Brick",
-        "canonical": "oklch(45.2% 0.128 33.5)",
-        "tonalRamp": [
-          "#1D0200",
-          "#480B01",
-          "#771D09",
-          "#9C402D",
-          "#C2624E",
-          "#E9856F",
-          "#FBB6A6",
-          "#FEE9E4"
-        ]
-      },
-      "ochre": {
-        "role": "primary",
-        "displayName": "Sign-Painter's Ochre",
-        "canonical": "oklch(80.5% 0.148 80.8)",
-        "tonalRamp": [
-          "#120900",
-          "#322202",
-          "#553D0C",
-          "#7D5A0D",
-          "#A77914",
-          "#D49906",
-          "#FABE46",
-          "#FFECCC"
-        ]
-      },
-      "on-brick-2": {
-        "role": "neutral",
-        "displayName": "Brick Wash",
-        "canonical": "oklch(91.2% 0.029 41.7)",
-        "tonalRamp": [
-          "#150703",
-          "#31201A",
-          "#503D36",
-          "#705C54",
-          "#927D75",
-          "#B69F97",
-          "#DBC3BB",
-          "#FDEAE2"
-        ]
-      },
-      "on-ink-2": {
-        "role": "neutral",
-        "displayName": "Board Chalk",
-        "canonical": "oklch(86.1% 0.015 57.6)",
-        "tonalRamp": [
-          "#100A06",
-          "#2B231E",
-          "#48403A",
-          "#685F59",
-          "#89807A",
-          "#ADA39C",
-          "#D1C7C0",
-          "#F7ECE5"
-        ]
-      },
-      "ochre-lit": {
-        "role": "primary",
-        "displayName": "Fresh Ochre",
-        "canonical": "#F6C45A",
-        "purpose": "Call button hover only."
-      },
-      "rule-ink": {
-        "role": "neutral",
-        "displayName": "Ink Hairline",
-        "canonical": "rgba(28, 23, 20, .16)",
-        "purpose": "1px dividers on white."
-      },
-      "rule-light": {
-        "role": "neutral",
-        "displayName": "White Hairline",
-        "canonical": "rgba(255, 255, 255, .26)",
-        "purpose": "1px and 2px dividers on brick and ink."
-      }
+      "navy": { "role": "primary", "displayName": "Sign Navy", "canonical": "#001c41", "tonalRamp": ["#000a18", "#001028", "#001c41", "#1a3256", "#3b4c68", "#6c7a91", "#a3adbd", "#d7dce5"] },
+      "teal": { "role": "primary", "displayName": "Door Teal", "canonical": "#069da3", "tonalRamp": ["#023a3d", "#045d61", "#068085", "#069da3", "#3bb5ba", "#78cdd1", "#b4e3e5", "#e1f4f5"] },
+      "saffron": { "role": "secondary", "displayName": "Saffron Dot", "canonical": "#f1b21c", "tonalRamp": ["#5c4205", "#8a6309", "#b98410", "#f1b21c", "#f4c24d", "#f7d47f", "#fae6b4", "#fdf5de"] },
+      "cannoli-gold": { "role": "tertiary", "displayName": "Cannoli Gold (illustration only)", "canonical": "#f2bb5d", "tonalRamp": ["#5a4018", "#86601f", "#b78530", "#f2bb5d", "#f5c97f", "#f8d9a1", "#fbe9c6", "#fef6e6"] },
+      "ivory": { "role": "neutral", "displayName": "Ivory", "canonical": "#fdfef8", "tonalRamp": ["#6e6f66", "#8f9087", "#b0b1a8", "#cfd1c4", "#e3e6d6", "#f3f5e8", "#f9faf0", "#fdfef8"] },
+      "ivory-2": { "role": "neutral", "displayName": "Ivory Deep", "canonical": "#f3f5e8", "tonalRamp": ["#a0a28f", "#bcbeaa", "#d0d3be", "#e3e6d6", "#f3f5e8", "#f7f9ee", "#fafbf3", "#fdfef8"] },
+      "navy-2": { "role": "neutral", "displayName": "Navy Soft", "canonical": "#3b4c68", "tonalRamp": ["#1f2a3c", "#2a384f", "#3b4c68", "#566684", "#7684a0", "#9ba6bb", "#c5cedc", "#e4e8ef"] },
+      "ivory-on-navy": { "role": "neutral", "displayName": "Ivory On Navy", "canonical": "#c5cedc", "tonalRamp": ["#5d6c85", "#7888a1", "#98a5ba", "#c5cedc", "#d3dae5", "#e0e5ed", "#edf0f5", "#f8f9fb"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "SAVARINO'S wordmark only; sized to the sign container."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Section titles."
-      },
-      "headline-lg": {
-        "displayName": "Headline Large",
-        "purpose": "Board title, star sandwich, visit address."
-      },
-      "headline-sm": {
-        "displayName": "Headline Small",
-        "purpose": "Shelf names, timeline years, descriptor, porch title."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Individual goods and family pans."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Definition keys, wholesale fact keys, board 'since' stamps."
-      },
-      "button": {
-        "displayName": "Button",
-        "purpose": "Call button label and number."
-      },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "Offer line, section ledes, wall caption."
-      },
-      "quote": {
-        "displayName": "Quote",
-        "purpose": "The press pull quote."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Running text; 18px from 1080px."
-      }
+      "display": { "displayName": "Display (t5)", "purpose": "Menu h1 and wholesale heading. Abril Fatface 400." },
+      "headline": { "displayName": "Headline (t4)", "purpose": "Section heads on favorites, catering, menu boards." },
+      "title": { "displayName": "Title (t3)", "purpose": "Hero tagline on phones, rail h2, favorite names." },
+      "subtitle": { "displayName": "Subtitle (t2)", "purpose": "Sign block words (times per-word k), phone numbers, offers." },
+      "item": { "displayName": "Item (t1)", "purpose": "Menu item names, row labels, point headings." },
+      "body": { "displayName": "Body (t0)", "purpose": "Paragraphs in Montserrat 450, max 62ch." },
+      "lede": { "displayName": "Lede", "purpose": "Section intros in Montserrat 500, max 38ch." },
+      "label": { "displayName": "Label", "purpose": "Uppercase nav, tabs, form labels. 0.14 to 0.16em tracking." },
+      "button": { "displayName": "Button", "purpose": "Uppercase 700 at 0.875rem, 0.12em tracking." },
+      "sign-word": { "displayName": "Sign word", "purpose": "The eight-word list. 600, 0.24 to 0.26em tracking, uppercase." }
     },
-    "shadows": [],
-    "textures": [
-      {
-        "name": "brick-course",
-        "value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\")",
-        "purpose": "Mortar courses tiled on every brick field; on the hero and repaint wall, an ::after overlay (z-index 1) above painted lettering, with nav, facts and CTA at z-index 2."
-      }
+    "shadows": [
+      { "name": "none", "value": "none", "purpose": "The system is flat. Depth comes from field changes and rules." },
+      { "name": "dock-current", "value": "inset 0 -4px 0 #f1b21c", "purpose": "Inset saffron underline for the current dock tab. The only shadow in the build." }
     ],
     "motion": [
-      {
-        "name": "ease-paint",
-        "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Brush strokes, ghost fades and the sticky call bar."
-      },
-      {
-        "name": "call-state",
-        "value": ".15s ease-out",
-        "purpose": "Call button hover color and 1px press."
-      },
-      {
-        "name": "callbar-slide",
-        "value": "transform .28s cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Phone call bar rising once the hero call scrolls away."
-      },
-      {
-        "name": "brush-stroke",
-        "value": "340ms per letter, 70ms stagger, 750ms hold between words",
-        "purpose": "The repaint wall: clip-path reveal top to bottom."
-      },
-      {
-        "name": "ghost-fade",
-        "value": "opacity 900ms to .15",
-        "purpose": "Earlier signs fading to ghost signs on the repaint wall."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Disables smooth scroll, the call bar slide and the wall animation; the finished wall shows statically."
-      }
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing: 180ms buttons, 200ms block hover, 240ms arrow nudge, 300ms header logo cross-fade." },
+      { "name": "cannoli-fill", "value": "1500ms cubic-bezier(0.25, 0.8, 0.35, 1)", "purpose": "The one delight moment. Circle clip-path grows from each end; right side delayed 350ms." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "All transitions and animations collapse under prefers-reduced-motion." }
     ],
     "breakpoints": [
-      {
-        "name": "quote-hang",
-        "value": "600px"
-      },
-      {
-        "name": "two-col",
-        "value": "720px"
-      },
-      {
-        "name": "seven-col",
-        "value": "1080px"
-      }
+      { "name": "sm", "value": "40rem" },
+      { "name": "md", "value": "56rem" },
+      { "name": "lg", "value": "80rem" }
     ],
-    "grid": {
-      "columns": 7,
-      "from": "1080px",
-      "columnGap": "24px",
-      "gutter": "clamp(16px, 5vw, 56px)",
-      "maxWidth": "1440px",
-      "boardMaxWidth": "1328px"
+    "spacing": [
+      { "name": "s1", "value": "0.5rem" },
+      { "name": "s2", "value": "1rem" },
+      { "name": "s3", "value": "1.5rem" },
+      { "name": "s5", "value": "2.5rem" },
+      { "name": "s8", "value": "4rem" },
+      { "name": "s13", "value": "6.5rem" },
+      { "name": "gutter", "value": "clamp(16px, 4.4vw, 56px)" },
+      { "name": "maxw", "value": "1440px" }
+    ],
+    "layout": {
+      "railField": "2fr / 10fr at 56rem, 2.5rem gap, 2px teal top rule",
+      "signRows": ["1fr 0.9fr 1fr 1.45fr", "1.45fr 1fr 0.9fr 1fr"],
+      "signBlockScale": { "Catering": 1.1, "Deli": 1.5, "Pastas": 1.3, "Sandwiches": 1.0, "Pastries": 1.1, "Cookies": 1.15, "Cakes": 1.5, "Bread": 1.5 }
     },
-    "fieldTokens": {
-      "field-white": {
-        "--focus": "#1C1714",
-        "--pounce": "#8F3421",
-        "--pounce-ink": "#1C1714",
-        "--text-2": "#5A4E47",
-        "--rule": "rgba(28, 23, 20, .16)"
-      },
-      "field-brick": {
-        "--focus": "#F0B43A",
-        "--pounce": "#FFFFFF",
-        "--pounce-ink": "#FFFFFF",
-        "--text-2": "#F4DCD3",
-        "--rule": "rgba(255, 255, 255, .26)"
-      },
-      "field-ink": {
-        "--focus": "#F0B43A",
-        "--pounce": "#F0B43A",
-        "--pounce-ink": "#FFFFFF",
-        "--text-2": "#D9CFC8",
-        "--rule": "rgba(255, 255, 255, .26)"
-      }
-    },
-    "focus": {
-      "value": "3px solid var(--focus); outline-offset 3px; border-radius 2px",
-      "purpose": "Global focus ring, colored by field."
-    }
+    "contrast": [
+      { "pair": "navy on ivory", "ratio": "16.7:1" },
+      { "pair": "navy on teal", "ratio": "5.1:1" },
+      { "pair": "navy-2 on ivory", "ratio": "8.6:1" },
+      { "pair": "ivory-on-navy on navy", "ratio": "10.6:1" }
+    ],
+    "provenance": "Rasters in site/assets/img (logo, cannoli empty/full/fill-left/fill-right) are crops of the owner's supplied color logo; see the .json sidecars next to each. Corner ornament, fleuron and tile are SVGs in the logo palette."
   },
   "components": [
     {
-      "name": "Call Button",
-      "kind": "button",
-      "refersTo": "button-call",
-      "description": "Ochre sign-paint call to action with ink keyline; label plus phone number in tabular figures.",
-      "html": "<div class=\"ds-field-white\" style=\"padding:24px\"><a class=\"ds-call\" href=\"#\"><span>Call it in</span> <span class=\"ds-num\">(931) 223-8335</span></a></div>",
-      "css": ".ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-call{display:inline-flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 .5em;min-height:56px;padding:12px 22px 10px;background:#F0B43A;color:#1C1714;border:2px solid #1C1714;border-radius:3px;font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.75rem;line-height:1;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;transition:background-color .15s ease-out,transform .15s ease-out;} .ds-call:hover{background:#F6C45A;} .ds-call:active{transform:translateY(1px);} .ds-call:focus-visible{outline:3px solid var(--focus,#1C1714);outline-offset:3px;} .ds-call>span{white-space:nowrap;} .ds-num{font-variant-numeric:tabular-nums;letter-spacing:.04em;}"
-    },
-    {
-      "name": "Call Button, Full Width on Brick",
-      "kind": "button",
-      "refersTo": "button-call-block",
-      "description": "The hero, sticky bar, pre-order, wholesale and visit call: full width, focus ring turns ochre on dark fields.",
-      "html": "<div class=\"ds-field-brick\" style=\"padding:24px;max-width:420px\"><a class=\"ds-call ds-block\" href=\"#\"><span>Call to order</span> <span class=\"ds-num\">(931) 223-8335</span></a></div>",
-      "css": ":host{--white:#FFFFFF;--ink:#1C1714;--ink-2:#5A4E47;--brick:#8F3421;--ochre:#F0B43A;--on-brick-2:#F4DCD3;--on-ink-2:#D9CFC8;--rule-ink:rgba(28,23,20,.16);--rule-light:rgba(255,255,255,.26);--f-display:'League Gothic','Arial Narrow',sans-serif;--f-text:'Besley',Georgia,serif;--brick-course:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\");} .ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-call{display:inline-flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 .5em;min-height:56px;padding:12px 22px 10px;background:#F0B43A;color:#1C1714;border:2px solid #1C1714;border-radius:3px;font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.75rem;line-height:1;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;transition:background-color .15s ease-out,transform .15s ease-out;} .ds-call:hover{background:#F6C45A;} .ds-call:active{transform:translateY(1px);} .ds-call:focus-visible{outline:3px solid var(--focus,#1C1714);outline-offset:3px;} .ds-call>span{white-space:nowrap;} .ds-num{font-variant-numeric:tabular-nums;letter-spacing:.04em;} .ds-block{display:flex;width:100%;}"
-    },
-    {
-      "name": "Text Link",
+      "name": "Teal Button",
       "kind": "custom",
-      "refersTo": null,
-      "description": "Secondary action in the text face: heavy underline, thickening on hover.",
-      "html": "<p class=\"ds-field-white\" style=\"padding:24px;font-family:'Besley',Georgia,serif\"><a class=\"ds-textlink\" href=\"#\">Get directions</a></p>",
-      "css": ".ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-textlink{color:inherit;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em;} .ds-textlink:hover{text-decoration-thickness:3px;} .ds-textlink:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px;}"
+      "refersTo": "button-teal",
+      "description": "Primary action. Teal face, navy text.",
+      "html": "<a class=\"ds-btn ds-btn-teal\" href=\"#\">Call now</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font-family:var(--font-body,Montserrat,sans-serif);font-size:.875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:2px solid #001c41;border-radius:0;transition:background-color 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1);cursor:pointer}.ds-btn-teal{background:#069da3;color:#001c41;border-color:#069da3}.ds-btn-teal:hover{background:#001c41;color:#fdfef8;border-color:#001c41}.ds-btn:focus-visible{outline:3px solid #001c41;outline-offset:3px}.ds-btn:active{transform:translateY(1px)}"
     },
     {
-      "name": "Pounce Chip",
-      "kind": "chip",
-      "refersTo": "chip-pounce-on-white",
-      "description": "Dotted means unpainted: marks a fact awaiting the owner, inked by the field's pounce color.",
-      "html": "<div style=\"display:grid;gap:0\"><p class=\"ds-field-white\" style=\"padding:16px\"><span class=\"ds-tbd\">Hours: confirm with owner</span></p><p class=\"ds-field-brick\" style=\"padding:16px\"><span class=\"ds-tbd\">Lead time: confirm with owner</span></p><p class=\"ds-field-ink\" style=\"padding:16px\"><span class=\"ds-tbd\">Line: confirm with owner</span></p></div>",
-      "css": ":host{--white:#FFFFFF;--ink:#1C1714;--ink-2:#5A4E47;--brick:#8F3421;--ochre:#F0B43A;--on-brick-2:#F4DCD3;--on-ink-2:#D9CFC8;--rule-ink:rgba(28,23,20,.16);--rule-light:rgba(255,255,255,.26);--f-display:'League Gothic','Arial Narrow',sans-serif;--f-text:'Besley',Georgia,serif;--brick-course:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\");} .ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-tbd{display:inline-block;padding:1px 8px 2px;border:2px dotted currentColor;border-radius:2px;font-family:'Besley',Georgia,serif;font-size:.875rem;font-weight:600;line-height:1.5;letter-spacing:.01em;color:var(--pounce);}"
+      "name": "Line Button",
+      "kind": "custom",
+      "refersTo": "button-line",
+      "description": "Secondary action on ivory. Fills navy on hover.",
+      "html": "<a class=\"ds-btn ds-btn-line\" href=\"#\">Menu</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font-family:var(--font-body,Montserrat,sans-serif);font-size:.875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:2px solid #001c41;border-radius:0;transition:background-color 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1)}.ds-btn-line{background:transparent;color:#001c41}.ds-btn-line:hover{background:#001c41;color:#fdfef8}.ds-btn:focus-visible{outline:3px solid #001c41;outline-offset:3px}"
     },
     {
-      "name": "Pounce Frame",
-      "kind": "card",
-      "refersTo": null,
-      "description": "Image placeholder as a sign painter's pounce layout: dotted outline, edge registration ticks, label naming the exact shot.",
-      "html": "<div class=\"ds-field-white\" style=\"padding:24px;max-width:420px\"><figure class=\"ds-shot\" style=\"margin:0\"><div class=\"ds-shot__frame\"><span class=\"ds-shot__label\"><span class=\"ds-shot__what\"><span class=\"ds-shot__kind\">Photo:</span> Sfogliatelle in the case</span><span class=\"ds-shot__spec\">4:5, through the glass</span></span></div></figure></div>",
-      "css": ".ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-shot{color:var(--pounce);font-family:'Besley',Georgia,serif;} .ds-shot__frame{position:relative;display:grid;place-content:center;aspect-ratio:4/5;padding:24px;border:2px dotted currentColor;border-radius:2px;text-align:center;} .ds-shot__frame::before,.ds-shot__frame::after{content:'';position:absolute;inset:0;pointer-events:none;} .ds-shot__frame::before{background:repeating-linear-gradient(to bottom,currentColor 0 2px,transparent 2px 6px) 50% 10px/2px 22px no-repeat,repeating-linear-gradient(to bottom,currentColor 0 2px,transparent 2px 6px) 50% calc(100% - 10px)/2px 22px no-repeat;} .ds-shot__frame::after{background:repeating-linear-gradient(to right,currentColor 0 2px,transparent 2px 6px) 10px 50%/22px 2px no-repeat,repeating-linear-gradient(to right,currentColor 0 2px,transparent 2px 6px) calc(100% - 10px) 50%/22px 2px no-repeat;} .ds-shot__label{display:grid;gap:8px;justify-items:center;padding:8px 40px;} .ds-shot__kind{font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.15em;letter-spacing:.06em;text-transform:uppercase;color:var(--pounce);} .ds-shot__what{font-size:1.5rem;font-weight:600;line-height:1.3;max-width:20ch;color:var(--pounce-ink);} .ds-shot__spec{font-size:.875rem;font-style:italic;}"
+      "name": "Saffron Button",
+      "kind": "custom",
+      "refersTo": "button-saffron",
+      "description": "The one hot call-out. Saffron face, navy text, ivory on hover.",
+      "html": "<a class=\"ds-btn ds-btn-saffron\" href=\"#\">Call</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font-family:var(--font-body,Montserrat,sans-serif);font-size:.875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:2px solid #001c41;border-radius:0;transition:background-color 180ms cubic-bezier(.16,1,.3,1)}.ds-btn-saffron{background:#f1b21c;color:#001c41;border-color:#f1b21c}.ds-btn-saffron:hover{background:#fdfef8;border-color:#fdfef8}.ds-btn:focus-visible{outline:3px solid #001c41;outline-offset:3px}"
     },
     {
-      "name": "Section Nav",
+      "name": "Line Light Button",
+      "kind": "custom",
+      "refersTo": "button-line-light",
+      "description": "Secondary action on navy fields.",
+      "html": "<div style=\"background:#001c41;padding:24px\"><a class=\"ds-btn ds-btn-line-light\" href=\"#\">Directions</a></div>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font-family:var(--font-body,Montserrat,sans-serif);font-size:.875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:2px solid #fdfef8;border-radius:0;transition:background-color 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1)}.ds-btn-line-light{background:transparent;color:#fdfef8}.ds-btn-line-light:hover{background:#fdfef8;color:#001c41}.ds-btn:focus-visible{outline:3px solid #fdfef8;outline-offset:3px}"
+    },
+    {
+      "name": "Sign Words",
       "kind": "nav",
-      "refersTo": null,
-      "description": "Painted caps, text only, ochre underline on hover; scrolls in one line on phones.",
-      "html": "<nav class=\"ds-field-brick ds-nav\" style=\"padding:16px 24px\"><a href=\"#\">The Board</a><a href=\"#\">The Case</a><a href=\"#\">Pans &amp; Cakes</a><a href=\"#\">Our Story</a><a href=\"#\">Visit</a></nav>",
-      "css": ":host{--white:#FFFFFF;--ink:#1C1714;--ink-2:#5A4E47;--brick:#8F3421;--ochre:#F0B43A;--on-brick-2:#F4DCD3;--on-ink-2:#D9CFC8;--rule-ink:rgba(28,23,20,.16);--rule-light:rgba(255,255,255,.26);--f-display:'League Gothic','Arial Narrow',sans-serif;--f-text:'Besley',Georgia,serif;--brick-course:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\");} .ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-nav{display:flex;flex-wrap:wrap;gap:0 16px;font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.1875rem;letter-spacing:.07em;text-transform:uppercase;line-height:1.3;} .ds-nav a{color:inherit;text-decoration:none;padding-block:6px;white-space:nowrap;} .ds-nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em;text-decoration-color:#F0B43A;} .ds-nav a:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px;}"
+      "refersTo": "sign-word",
+      "description": "The eight words as a centered caps list with saffron dots between neighbors.",
+      "html": "<ul class=\"ds-words\"><li><a href=\"#\">Catering</a></li><li><a href=\"#\">Deli</a></li><li><a href=\"#\">Pastas</a></li><li><a href=\"#\">Sandwiches</a></li></ul>",
+      "css": ".ds-words{display:flex;justify-content:center;gap:2.4em;list-style:none;margin:0;padding:0;font-family:Montserrat,sans-serif;font-size:1.0625rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#001c41}.ds-words li{position:relative}.ds-words li:not(:last-child)::after{content:\"\";position:absolute;left:calc(100% + 1.2em - 3px);top:50%;width:7px;height:7px;margin-top:-3px;border-radius:50%;background:#f1b21c}.ds-words a{display:block;padding:.55em .1em;text-decoration:none;color:inherit;border-bottom:2px solid transparent}.ds-words a:hover{border-bottom-color:#069da3}.ds-words a:focus-visible{outline:3px solid #001c41;outline-offset:3px}"
     },
     {
-      "name": "Fact Rows",
-      "kind": "custom",
-      "refersTo": null,
-      "description": "Ruled definition rows: painted caps key, text-face value; rules, not boxes.",
-      "html": "<dl class=\"ds-field-brick ds-facts\" style=\"padding:24px;margin:0\"><div class=\"ds-fact\"><dt>Today</dt><dd>Tuesday<br><span style=\"display:inline-block;margin-top:4px;padding:1px 8px 2px;border:2px dotted currentColor;border-radius:2px;font-size:.875rem;font-weight:600\">Hours: confirm with owner</span></dd></div><div class=\"ds-fact\"><dt>Find us</dt><dd>314 W 11th St, Columbia, TN</dd></div></dl>",
-      "css": ":host{--white:#FFFFFF;--ink:#1C1714;--ink-2:#5A4E47;--brick:#8F3421;--ochre:#F0B43A;--on-brick-2:#F4DCD3;--on-ink-2:#D9CFC8;--rule-ink:rgba(28,23,20,.16);--rule-light:rgba(255,255,255,.26);--f-display:'League Gothic','Arial Narrow',sans-serif;--f-text:'Besley',Georgia,serif;--brick-course:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\");} .ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-facts{display:grid;font-family:'Besley',Georgia,serif;} .ds-fact{display:grid;grid-template-columns:5.25rem 1fr;gap:16px;align-items:baseline;padding-block:10px;border-top:1px solid var(--rule);} .ds-fact:last-child{border-bottom:1px solid var(--rule);} .ds-fact dt{font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.3125rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;color:var(--text-2);} .ds-fact dd{margin:0;line-height:1.4;}"
+      "name": "Sign Blocks",
+      "kind": "card",
+      "refersTo": "sign-block-star",
+      "description": "A ruled row of word cells; featured cells invert to navy. Word size scales per block.",
+      "html": "<ul class=\"ds-blocks\"><li class=\"ds-block\"><a href=\"#\"><h4 style=\"--k:1.5\">Deli</h4><p>Cured meats and cheeses from the case.</p></a></li><li class=\"ds-block ds-block-star\"><a href=\"#\"><h4 style=\"--k:1\">Sandwiches</h4><p>Huge ones. The muffuletta feeds two.</p></a></li></ul>",
+      "css": ".ds-blocks{display:grid;grid-template-columns:1fr 1.45fr;list-style:none;margin:0;padding:0}.ds-block{border-top:1px solid #069da3}.ds-block+.ds-block{border-left:1px solid #069da3}.ds-block a{display:flex;flex-direction:column;min-height:168px;padding:24px 16px 16px;text-decoration:none;color:#001c41;transition:background-color 200ms cubic-bezier(.16,1,.3,1)}.ds-block a:hover{background:#f3f5e8}.ds-block h4{margin:0 0 8px;font-family:'Abril Fatface',Georgia,serif;font-weight:400;font-size:calc(1.75rem*var(--k,1));line-height:1.02}.ds-block p{margin:0;font-family:Montserrat,sans-serif;font-size:.9rem;line-height:1.5;color:#3b4c68}.ds-block-star{background:#001c41;border-top-color:#001c41}.ds-block-star a{color:#fdfef8}.ds-block-star p{color:#c5cedc}.ds-block-star a:hover{background:#0a2d5c}.ds-block a:focus-visible{outline:3px solid #001c41;outline-offset:-3px}"
     },
     {
-      "name": "Menu Board Row",
+      "name": "Hours Table",
       "kind": "custom",
-      "refersTo": "field-ink",
-      "description": "The signature board: lamp-black field in a brick surround, sandwich names in white caps, ochre stamps.",
-      "html": "<div class=\"ds-field-brick\" style=\"padding:24px\"><div class=\"ds-field-ink ds-board\"><p class=\"ds-board__title\">The Board</p><div class=\"ds-item\"><p class=\"ds-item__name\">The Palermo</p><p class=\"ds-item__line\">Rose Palermo, attorney, was the only woman in the Sandwich Gang.</p><p class=\"ds-since\">On the board since the Cucina</p></div></div></div>",
-      "css": ":host{--white:#FFFFFF;--ink:#1C1714;--ink-2:#5A4E47;--brick:#8F3421;--ochre:#F0B43A;--on-brick-2:#F4DCD3;--on-ink-2:#D9CFC8;--rule-ink:rgba(28,23,20,.16);--rule-light:rgba(255,255,255,.26);--f-display:'League Gothic','Arial Narrow',sans-serif;--f-text:'Besley',Georgia,serif;--brick-course:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40'%3E%3Cpath d='M0 .75H64M0 20.75H64M.75 0V20M32.75 20V40' fill='none' stroke='%23000000' stroke-opacity='.13' stroke-width='1.5'/%3E%3C/svg%3E\");} .ds-field-brick{background-color:#8F3421;background-image:var(--brick-course);color:#FFFFFF;--focus:#F0B43A;--pounce:#FFFFFF;--pounce-ink:#FFFFFF;--text-2:#F4DCD3;--rule:rgba(255,255,255,.26);} .ds-field-ink{background:#1C1714;color:#FFFFFF;--focus:#F0B43A;--pounce:#F0B43A;--pounce-ink:#FFFFFF;--text-2:#D9CFC8;--rule:rgba(255,255,255,.26);} .ds-field-white{background:#FFFFFF;color:#1C1714;--focus:#1C1714;--pounce:#8F3421;--pounce-ink:#1C1714;--text-2:#5A4E47;--rule:rgba(28,23,20,.16);} .ds-board{padding:56px 24px 40px;font-family:'Besley',Georgia,serif;} .ds-board__title{margin:0 0 24px;font-family:'League Gothic','Arial Narrow',sans-serif;text-transform:uppercase;font-size:4rem;line-height:.9;color:#F0B43A;} .ds-item{display:grid;gap:10px;padding-block:40px;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);} .ds-item p{margin:0;} .ds-item__name{font-family:'League Gothic','Arial Narrow',sans-serif;text-transform:uppercase;font-size:3rem;line-height:.9;color:#FFFFFF;} .ds-item__line{color:var(--text-2);max-width:44ch;} .ds-since{font-family:'League Gothic','Arial Narrow',sans-serif;font-size:1.3125rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;color:#F0B43A;}"
+      "refersTo": "hours",
+      "description": "Day, dotted teal leader, time. Today gets a saffron dot.",
+      "html": "<table class=\"ds-hours\"><tbody><tr><th>Sunday</th><td class=\"ds-lead\"></td><td>10am to 3pm</td></tr><tr class=\"ds-today\"><th>Monday</th><td class=\"ds-lead\"></td><td>10am to 4pm</td></tr><tr><th>Wednesday to Saturday</th><td class=\"ds-lead\"></td><td>10am to 5pm</td></tr></tbody></table>",
+      "css": ".ds-hours{width:100%;border-collapse:collapse;font-family:Montserrat,sans-serif;color:#001c41}.ds-hours tr{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:10px;padding-block:10px}.ds-hours th{text-align:left;font-weight:600}.ds-hours td{padding:0}.ds-hours .ds-lead{border-bottom:2px dotted #069da3;transform:translateY(-5px);min-width:12px}.ds-hours td:last-child{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}.ds-today th,.ds-today td:last-child{font-weight:700}.ds-today th::before{content:\"\";display:inline-block;width:10px;height:10px;border-radius:50%;background:#f1b21c;margin-right:10px}"
+    },
+    {
+      "name": "Menu Item",
+      "kind": "custom",
+      "refersTo": "menu-item",
+      "description": "Serif name, dotted leader, tabular price, quiet description.",
+      "html": "<div class=\"ds-item\"><div class=\"ds-item-top\"><span class=\"ds-item-name\">The Muffuletta</span><span class=\"ds-item-lead\"></span><span class=\"ds-item-price\">$00</span></div><p class=\"ds-item-desc\">Italian meats, provolone, olive salad on house bread.</p></div>",
+      "css": ".ds-item{padding:14px 0 12px;border-bottom:1px solid rgba(0,28,65,.16);color:#001c41}.ds-item-top{display:flex;align-items:baseline;gap:12px}.ds-item-name{font-family:'Abril Fatface',Georgia,serif;font-size:1.3rem;line-height:1.2}.ds-item-lead{flex:1;min-width:14px;border-bottom:2px dotted #069da3;transform:translateY(-5px)}.ds-item-price{font-family:Montserrat,sans-serif;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.04em}.ds-item-desc{margin:4px 0 0;font-family:Montserrat,sans-serif;font-size:.9rem;line-height:1.5;color:#3b4c68;max-width:46ch}"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "form-field",
+      "description": "Underline input with caps label; textarea gets a full box.",
+      "html": "<div class=\"ds-f\"><label for=\"ds-n\">Your name</label><input id=\"ds-n\" type=\"text\" placeholder=\"Carmelo\"></div>",
+      "css": ".ds-f{display:grid;gap:6px;font-family:Montserrat,sans-serif;color:#001c41}.ds-f label{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.ds-f input{width:100%;min-height:48px;padding:10px 2px;font:inherit;font-size:1rem;font-weight:500;color:inherit;background:transparent;border:0;border-bottom:2px solid #001c41;border-radius:0}.ds-f input::placeholder{color:#5b6b84;opacity:1}.ds-f input:focus-visible{outline:3px solid #069da3;outline-offset:2px}.ds-f input[aria-invalid=\"true\"]{border-color:#b3261e}"
+    },
+    {
+      "name": "Framed Panel",
+      "kind": "card",
+      "refersTo": "framed-panel",
+      "description": "2px teal frame; corner flourishes are the logo's ornament, mirrored.",
+      "html": "<div class=\"ds-framed\"><p>Tell us what you need. We will call you back.</p></div>",
+      "css": ".ds-framed{position:relative;border:2px solid #069da3;padding:40px 24px;background:#fdfef8;color:#001c41;font-family:Montserrat,sans-serif}.ds-framed p{margin:0}"
+    },
+    {
+      "name": "Designer Note",
+      "kind": "custom",
+      "refersTo": "designer-note",
+      "description": "Review scaffold for unknowns. Hideable. Not for shipped surfaces.",
+      "html": "<p class=\"ds-dn\"><b>CONFIRM WITH OWNER</b> Holiday hours.</p>",
+      "css": ".ds-dn{margin:0;padding:8px 12px;background:#fbf0cd;color:#001c41;border:1px solid #f1b21c;font-family:Montserrat,sans-serif;font-size:.8125rem;line-height:1.45}.ds-dn b{display:inline-block;margin-right:6px;padding:2px 6px;background:#001c41;color:#f1b21c;font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}"
+    },
+    {
+      "name": "Dock",
+      "kind": "nav",
+      "refersTo": "dock",
+      "description": "Mobile fixed bar: Call (saffron), Directions, Menu.",
+      "html": "<nav class=\"ds-dock\"><a href=\"#\">Call</a><a href=\"#\">Map</a><a href=\"#\" aria-current=\"page\">Menu</a></nav>",
+      "css": ".ds-dock{display:grid;grid-template-columns:1.2fr 1fr 1fr;background:#001c41;border-top:3px solid #069da3}.ds-dock a{display:grid;place-items:center;min-height:60px;color:#fdfef8;text-decoration:none;font-family:Montserrat,sans-serif;font-size:.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-left:1px solid rgba(253,254,248,.22)}.ds-dock a:first-child{background:#f1b21c;color:#001c41;border-left:0}.ds-dock a[aria-current=\"page\"]{box-shadow:inset 0 -4px 0 #f1b21c}.ds-dock a:focus-visible{outline:3px solid #fdfef8;outline-offset:-4px}"
     }
   ],
   "narrative": {
-    "northStar": "The Painted Wall on 11th Street",
-    "overview": "The page is the building. Every surface is a wall a sign painter worked on: white plaster ground, brick-red courses with the mortar showing, a lamp-black menu board hung on the brick, and ochre sign paint reserved for the things you act on and the numbers you dial. Type is what a painter would letter: condensed American gothic caps for anything painted, a Clarendon for anything spoken. Structure comes from painted rules, never from boxed cards.\n\nThe density is a sign's density: a few big words, then plain sentences. Fields stack full-bleed down the page and alternate white and brick, with the black board and footer as the darkest paint; white leads, brick follows, ink is the smallest share. Anything not yet known or photographed is left as a sign painter's pounce layout: dotted outline, labelled, clearly unpainted. The one motion that carries meaning is the wall repainting itself through the building's past lives.\n\nThe confirmed anti-reference is the food-photo bakery template: cream grounds, script faces, soft cards and glossy hero photography.",
+    "northStar": "The Sign Over the Door",
+    "overview": "The site is the family's hand-lettered shop sign made navigable. Eight words (Catering, Deli, Pastas, Sandwiches, Pastries, Cookies, Cakes, Bread) run the whole site in the same order and spelling, and every surface is built so those words read as a sign: heavy display serif, wide-set sans caps, teal rules, a saffron dot between neighbors. Navy ink on ivory paper is the default; navy as a ground is the exception that makes a moment feel lit.\n\nThe world is the owner's own color logo. Palette, ornament and illustration are sampled or cropped from it. Nothing is a rebrand. Space and hairlines do the grouping, not shadow or card chrome: the system is flat, square-cornered and ruled. Density is airy on ivory, tighter inside the menu where dotted leaders and prices need to scan.",
     "keyCharacteristics": [
-      "Three paint fields (white, brick, ink), each re-tinting its own secondary text, rules, focus ring and placeholder ink.",
-      "League Gothic uppercase for everything painted; Besley for everything read.",
-      "Hairline and 2-3px painted rules divide content; no bordered cards, no shadows.",
-      "Ochre is the call to action and the phone number, nothing decorative.",
-      "Dotted means unpainted: placeholders are pounce patterns, never grey boxes.",
-      "Mortar courses read through painted lettering on the hero sign and the repaint wall."
+      "Roughly 60 percent ivory, 30 navy, 10 teal plus saffron.",
+      "Two families only: Abril Fatface for anything headline-like, Montserrat for everything read.",
+      "Rail-and-field grid: a 2fr rail for the section title, a 10fr field for content, under a 2px teal rule.",
+      "Square corners everywhere; circles only for dots.",
+      "Flat. No gradients, no cast shadows.",
+      "Dotted teal leaders connect labels to values (hours, menu prices, footer hours).",
+      "One delight moment: filling the cannoli."
     ],
     "rules": [
-      {
-        "name": "The Field Owns the Ink Rule",
-        "body": "Every section declares one field (white, brick or ink) and the field sets its own secondary text, rule, focus and pounce colors. Never hard-code a secondary color inside a component; read it from the field.",
-        "section": "colors"
-      },
-      {
-        "name": "The Ochre Is for Calling Rule",
-        "body": "Ochre marks the call to action, the phone number, and the painted headline on the board. It never becomes a background wash, a divider, or ornament.",
-        "section": "colors"
-      },
-      {
-        "name": "The Brush or Voice Rule",
-        "body": "If it would be painted on the wall, set it in League Gothic caps. If someone would say it, set it in Besley sentence case. Never set Besley in caps or League Gothic in lowercase.",
-        "section": "typography"
-      },
-      {
-        "name": "The Tabular Number Rule",
-        "body": "Phone numbers, street numbers and years are set in the display face with tabular figures and slight tracking (0.02-0.05em).",
-        "section": "typography"
-      },
-      {
-        "name": "The Paint Has No Shadow Rule",
-        "body": "Paint sits in the surface. No drop shadows, glows or offset shadows on type, buttons or fields.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Mortar Shows Through Rule",
-        "body": "Large painted lettering on brick sits under the mortar overlay, not on top of it. Interactive elements sit above.",
-        "section": "elevation"
-      }
+      { "name": "The Teal Is Structure Rule", "body": "Teal draws lines, leaders, borders and button faces. It never sets paragraph or label text on ivory. Text on a teal face is navy, never ivory.", "section": "colors" },
+      { "name": "The Saffron Dot Rule", "body": "Saffron is a dot, a bullet, a single button or a single tab, never a surface wash or a text color on ivory. If a screen has more than a handful of saffron marks, remove some.", "section": "colors" },
+      { "name": "The Field Owns Its Ink Rule", "body": "A field-navy section re-declares foreground, secondary, hairline and focus ring tokens. Never hand-color text inside a field; swap the field.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Display serif for names and headings, sans for everything that is read or tapped. Never set paragraphs in the serif; never set a heading in the sans except the uppercase sign-word list and labels.", "section": "typography" },
+      { "name": "The Tabular Price Rule", "body": "Prices and hours use tabular numerals, bold, with 0.04em tracking on prices.", "section": "typography" },
+      { "name": "The Flat Rule", "body": "A surface rises by changing ground or gaining a teal rule, never by casting a shadow.", "section": "elevation" },
+      { "name": "The Ornaments Never Wallpaper Rule", "body": "Corner flourishes belong to a framed panel (the order forms), the fleuron to a single section break, the tile band to the footer only. Never tile ornament behind content, never repeat a flourish on a surface that does not frame something.", "section": "shapes" }
     ],
     "dos": [
-      "**Do** assign every section one field (white, brick or ink) and let it supply secondary text, rules, focus and pounce colors.",
-      "**Do** keep ochre for the call button, phone numbers and board headlines; every call button is ochre with a 2px ink keyline.",
-      "**Do** separate content with rules: 1px hairlines between rows, 2px rules to open a list, 3px white rules on brick for emphasis.",
-      "**Do** mark every unknown with a dotted pounce chip or pounce frame that names exactly what is missing.",
-      "**Do** lay out desktop on the seven-column grid with the 24px gap and space with the 8/16/24/40/56/96/112 steps.",
-      "**Do** tile mortar courses on brick fields and lift them above big painted lettering."
+      "Do set all text in navy on ivory (16.7:1), navy-2 for secondary (8.6:1), and ivory or ivory-on-navy (10.6:1) on navy fields.",
+      "Do put navy text on every teal button face (5.1:1).",
+      "Do use teal for rules, leaders, borders, underlines and tile work.",
+      "Do keep the eight words spelled exactly, in the sign order, prominent in the hero, the sign blocks, the menu headings and the footer.",
+      "Do group with space, hairlines and type before reaching for a box.",
+      "Do use the rail and field grid (2fr/10fr at 56rem) for every sectioned page.",
+      "Do keep tap targets at 44px or more and every control visibly focusable.",
+      "Do use dotted teal leaders for any label-to-value pair.",
+      "Do make any new illustration in the logo's etched engraving style, derived from the logo, or leave it out and ship a labeled placeholder frame.",
+      "Do keep the cannoli fill as the only delight moment."
     ],
     "donts": [
-      "**Don't** use cream grounds, script faces, soft rounded cards or glossy food-photo heroes; that is the bakery template this world rejects.",
-      "**Don't** draw solid-bordered boxes around content; closed outlines are only the dotted pounce or the call button's keyline.",
-      "**Don't** add shadows, glows or color gradients to fields, type or buttons.",
-      "**Don't** fill a missing photo with a grey box, stock image or blur; use the pounce frame.",
-      "**Don't** set League Gothic in lowercase or Besley in caps.",
-      "**Don't** add a second animated moment; the wall repaint is the one delight, and all motion yields to reduced-motion preferences."
+      "Don't set paragraph or label text in teal on ivory. Teal is structure.",
+      "Don't set ivory text on a teal face.",
+      "Don't use saffron as a surface wash, a text color on ivory, or on more than a few marks per screen. Cannoli gold never appears in UI.",
+      "Don't use gradients, drop shadows, rounded corners, or thick side stripes. Borders go all the way around or run as full rules.",
+      "Don't let ornaments become wallpaper: corner flourishes only on framed panels, the fleuron only as a single section divider, the tile band only above the footer legal line.",
+      "Don't add a second delight interaction, or any decorative animation.",
+      "Don't introduce a third typeface, a script face, emoji, glyph icons, or stock or scraped photography.",
+      "Don't use Italian flag color combinations, checkered patterns, or illustrations in any other style than the logo's etching.",
+      "Don't invent facts. Unknown details stay as a labeled placeholder or a CONFIRM WITH OWNER note."
     ]
   }
 }
