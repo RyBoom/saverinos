@@ -188,7 +188,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 @media (min-width: 56rem) { .menu-page .site-header { position: sticky; } }
 
 /* ---------- Hero ---------- */
-.hero { padding-block: var(--s2) var(--s8); }
+.hero { padding-block: var(--s1) var(--s8); }
 .words { --sep: 1.6em; display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--sep); margin-inline: auto; font-size: clamp(0.9375rem, 0.75rem + 1vw, 1.375rem); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
 .words li { position: relative; }
 .words li:nth-child(odd) { text-align: right; }
@@ -199,7 +199,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 .words li::after { content: ""; display: none; position: absolute; left: calc(100% + var(--sep) / 2 - 3px); top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: var(--saffron); }
 .words li:nth-child(odd)::after { display: block; }
 .words--bottom { margin-top: 0; }
-.hero-logo { margin-block: var(--s2); }
+.hero-logo { margin-block: 12px; }
 .hero-logo img { width: min(100%, 44rem); height: auto; margin-inline: auto; }
 .hero-info { display: grid; gap: var(--s2); margin-top: var(--s3); grid-template-areas: "line" "where" "cta" "note"; }
 .hero-line { grid-area: line; }
@@ -245,7 +245,11 @@ p { text-wrap: pretty; max-width: 62ch; }
 .lede { font-size: var(--t1); line-height: 1.45; font-weight: 500; max-width: 38ch; }
 
 /* ---------- Know before you go ---------- */
-.know { display: grid; gap: var(--s5); }
+.know { display: grid; gap: var(--s5); grid-template-areas: "hours" "points" "diagram" "photo"; }
+.know-hours { grid-area: hours; }
+.know-points { grid-area: points; }
+.know-diagram { grid-area: diagram; }
+.know-photo { grid-area: photo; }
 .hours { width: 100%; border-collapse: collapse; }
 .hours caption { text-align: left; }
 .hours tr { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 10px; padding-block: 10px; }
@@ -267,8 +271,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 .parking svg { width: 100%; height: auto; }
 .parking figcaption { margin-top: var(--s1); font-size: 0.8125rem; color: var(--fg-2); }
 @media (min-width: 56rem) {
-  .know { grid-template-columns: minmax(0, 5fr) minmax(0, 5fr); column-gap: var(--s8); }
-  .parking { grid-column: 1 / -1; grid-template-columns: minmax(0, 5fr) minmax(0, 5fr); column-gap: var(--s8); margin-top: var(--s2); }
+  .know { grid-template-columns: minmax(0, 5fr) minmax(0, 5fr); column-gap: var(--s8); row-gap: var(--s5); grid-template-areas: "hours points" "diagram points" "diagram photo"; align-items: start; }
 }
 
 /* ---------- Everything on the sign ---------- */
@@ -432,10 +435,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 .slot cite { display: block; margin-top: var(--s2); font-style: normal; font-size: 0.8125rem; font-weight: 600; color: var(--navy-2); }
 @media (min-width: 56rem) {
   .proof-top { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); column-gap: var(--s8); align-items: start; }
-  .slots { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s5); align-items: start; }
-  .slot:nth-child(1) { grid-column: 1 / span 5; }
-  .slot:nth-child(2) { grid-column: 6 / span 4; }
-  .slot:nth-child(3) { grid-column: 10 / span 3; }
+  .slots { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--s5); align-items: stretch; }
   .slot b { letter-spacing: 0.1em; white-space: nowrap; }
 }
 
