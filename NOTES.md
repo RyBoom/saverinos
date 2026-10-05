@@ -23,7 +23,7 @@ A two page concept (Homepage, Menu) for Carmelo Savarino. These notes are for wh
 - Designer notes (the gold boxes) can be hidden with the button in the top bar. They are remembered per browser.
 - Both forms check their fields (a real phone number, a date that is not in the past) and show a confirmation. They do not send anything yet.
 - The hero says "Yes, we're open." only while the shop is actually open. When it is closed the line disappears and the status line says when you reopen.
-- On short phones (under 800px tall) the two hero buttons hide so the address and phone stay above the bottom bar; the bar already carries Directions and Menu.
+- On short phones (under 800px tall) the hero puts the status, address and phone first and the headline and buttons after, so the facts stay above the bottom bar.
 
 ## CONFIRM WITH OWNER
 

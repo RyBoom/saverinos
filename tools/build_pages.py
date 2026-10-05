@@ -50,7 +50,6 @@ def head(title, desc, page):
             "telephone": "+1-931-223-8335",
             "address": {"@type": "PostalAddress", "streetAddress": "314 West 11th Street", "addressLocality": "Columbia",
                         "addressRegion": "TN", "postalCode": "38401", "addressCountry": "US"},
-            "foundingDate": "2002",
             "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "156"},
             "openingHoursSpecification": [
                 {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "15:00"},
@@ -153,17 +152,19 @@ def footer():
 <div>
 <h3>Follow</h3>
 <ul class="foot-social">
-<li><a href="{IG}" rel="noopener">Instagram @savarinosmarket</a></li>
-<li><a href="{TT}" rel="noopener">TikTok @savarinosmarket</a></li>
+<li><a href="{IG}" rel="noopener">Instagram</a></li>
+<li><a href="{TT}" rel="noopener">TikTok</a></li>
 </ul>
+<p class="foot-handle">@savarinosmarket on both.</p>
 {dn("social", "Instagram and TikTok links are built from the handle @savarinosmarket. Check they land on the right accounts.")}
 </div>
 <div>
 <h3>Map</h3>
 <div class="foot-map">
-<div class="foot-map-fallback"><p style="margin:0;max-width:none">{ADDR}</p><a class="btn btn-line-light" href="{MAPS}" rel="noopener">Open in Maps</a></div>
+<div class="foot-map-fallback" aria-hidden="true"><p style="margin:0;max-width:none">{ADDR}</p></div>
 <iframe title="Map to Savarino's Market, 314 West 11th Street, Columbia, Tennessee" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+<a class="btn btn-line-light foot-map-link" href="{MAPS}" rel="noopener">Open in Maps</a>
 </div>
 </div>
 </div>
@@ -177,8 +178,8 @@ def form_catering(p):
 <div class="f"><label for="{p}-name">Name</label><input id="{p}-name" name="name" autocomplete="name" required data-error="Tell us your name."><span class="err" aria-live="polite"></span></div>
 <div class="f"><label for="{p}-phone">Phone</label><input id="{p}-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="931-555-0123" required data-error="We need a number to call you back."><span class="err" aria-live="polite"></span></div>
 <div class="f-row">
-<div class="f"><label for="{p}-date">Date needed (optional)</label><input id="{p}-date" name="date" type="date"></div>
-<div class="f"><label for="{p}-count">Headcount (optional)</label><input id="{p}-count" name="headcount" type="number" min="1" inputmode="numeric" placeholder="12"></div>
+<div class="f"><label for="{p}-date">Date needed (optional)</label><input id="{p}-date" name="date" type="date"><span class="err" aria-live="polite"></span></div>
+<div class="f"><label for="{p}-count">Headcount (optional)</label><input id="{p}-count" name="headcount" type="number" min="1" inputmode="numeric" placeholder="12"><span class="err" aria-live="polite"></span></div>
 </div>
 <div class="f"><label for="{p}-need">What you need</label><textarea id="{p}-need" name="need" rows="4" placeholder="A birthday cake, two cookie trays, lunch for the office" required data-error="Tell us what you are after."></textarea><span class="err" aria-live="polite"></span></div>
 <button class="btn btn-teal" type="submit">Send my request</button>
@@ -248,11 +249,11 @@ def home():
         "Catering": "Trays and family meals for the table or the whole crowd.",
         "Deli": "Cured meats and cheeses from the case, olives, imported olive oil.",
         "Pastas": "Lasagna, stuffed shells and dinners to take home, with house sauce.",
-        "Sandwiches": "Huge ones. The muffuletta feeds two.",
-        "Pastries": "Cannoli filled to order. Sfogliatelle, bomboloni, baba rum.",
-        "Cookies": "Pignoli, rainbow cookies, biscotti. Trays by order.",
+        "Sandwiches": "Huge ones, named for regulars.",
+        "Pastries": "Cannoli filled to order, sfogliatelle, bomboloni.",
+        "Cookies": "Pignoli, rainbow cookies and biscotti, trays by order.",
         "Cakes": "Tiramisu, cheesecake and custom cakes by order.",
-        "Bread": "Baked in house. Italian loaves, hoagie rolls, focaccia on Fridays.",
+        "Bread": "Baked in house, with focaccia on Fridays.",
     }
     star_set = [4, 4, 4, 4, 4]
 
@@ -310,7 +311,7 @@ def home():
 <div class="field">
 <div class="know">
 <div class="know-hours">
-<h3>Hours</h3>
+<h3>Hours, Central time</h3>
 <table class="hours" data-hours><caption class="sr-only">Hours, Central time</caption><tbody>{hours_rows}</tbody></table>
 </div>
 <div class="know-points">
@@ -359,7 +360,7 @@ def home():
 </article>
 <article class="fav fav--cannoli">
 {framed('''<div class="stage" data-stage>
-<div class="stage-copy"><h3>Cannoli, filled to order</h3><p>We fill each one when you order it. Tap the shell and watch.</p></div>
+<div class="stage-copy"><h3>Cannoli, filled to order</h3><p>We fill each one when you order it.<span class="js-only"> Tap the shell and watch.</span></p></div>
 <div class="cannoli" aria-hidden="true">
 <img class="c-full" src="assets/img/cannoli-full.webp" alt="" width="1168" height="434" loading="lazy">
 <img class="c-empty" src="assets/img/cannoli-empty.webp" alt="" width="1168" height="434" loading="lazy">
@@ -368,12 +369,12 @@ def home():
 </div>
 <p class="stage-status" data-stage-status aria-live="polite"></p>
 <button class="btn btn-teal" type="button" data-fill>Fill it</button>
-<a class="stage-next" href="menu.html#pastries" hidden>See Pastries</a>
+<a class="stage-next" href="menu.html#pastries">See Pastries</a>
 </div>''')}
 </article>
 <article class="fav fav--foc">
 <h3>Focaccia on Fridays</h3>
-<p>Baked in house, on Fridays.</p>
+<p>Baked in house.</p>
 </article>
 <article class="fav fav--shells">
 <h3>Family-size stuffed shells</h3>
@@ -465,13 +466,13 @@ def home():
 <div class="rf">
 <div class="rail"><h2 id="fam-h">The family</h2></div>
 <div class="field">
-<p class="route" aria-label="Sicily, Brooklyn, Nashville, Columbia"><span>Sicily</span><i></i><span>Brooklyn</span><i></i><span>Nashville</span><i></i><span>Columbia</span></p>
+<p class="route"><span>Sicily</span><i></i><span>Brooklyn</span><i></i><span>Nashville</span><i></i><span>Columbia</span></p>
 <div class="family-grid">
 <div class="family-copy">
-<p>Corrado Savarino Sr. was born in Sicily, raised in Brooklyn and trained at Veniero's in Manhattan.</p>
+<p>Corrado Savarino&nbsp;Sr. was born in Sicily, raised in Brooklyn and trained at Veniero's in Manhattan.</p>
 <p>He opened the family's first bakery in Nashville in 2002, and the family ran Savarino's Cucina in Hillsboro Village from 2006 to 2017.</p>
 <p>The Columbia bakery started baking wholesale in 2019 and opened to the public in 2023.</p>
-<p>Today his son Carmelo runs the market, with Carmelo's younger brother Corrado Jr. right beside him.</p>
+<p>Today his son Carmelo runs the market, with Carmelo's younger brother Corrado&nbsp;Jr. right beside him.</p>
 </div>
 <div class="ph ph--tall" style="max-width:420px"><span>PHOTO: Carmelo and Corrado Jr. behind the case</span></div>
 </div>
@@ -571,7 +572,7 @@ def menu():
         item("Tiramisu"),
         item("Italian cheesecake"),
         item("New York cheesecake"),
-        item("Custom birthday, wedding and sheet cakes", "By order."),
+        item("Custom cakes", "Birthday, wedding and sheet cakes, by order."),
     ])
 
     ph = lambda t, cls="ph--wide": f'<div class="ph {cls}"><span>{t}</span></div>'

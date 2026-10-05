@@ -77,7 +77,11 @@
   var pageEl = document.querySelector(".home") || body;
   if (heroLogo && "IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
-      pageEl.classList.toggle("past-hero", !entries[0].isIntersecting);
+      var past = !entries[0].isIntersecting;
+      pageEl.classList.toggle("past-hero", past);
+      // The hidden logo cannot hold focus: hand it to the nav if the page scrolls back up.
+      var lg = document.querySelector(".hdr-logo");
+      if (!past && lg && document.activeElement === lg) { var first = document.querySelector(".hdr-nav a"); if (first) first.focus(); }
     }, { rootMargin: "-72px 0px 0px 0px" }).observe(heroLogo);
   } else if (heroLogo) {
     pageEl.classList.add("past-hero");
@@ -125,7 +129,7 @@
       var ul = byId[id].closest("ul");
       if (ul && ul.scrollWidth > ul.clientWidth) {
         var a = byId[id];
-        ul.scrollTo({ left: a.offsetLeft - (ul.clientWidth - a.offsetWidth) / 2, behavior: calm ? "auto" : "smooth" });
+        ul.scrollTo({ left: a.offsetLeft - (ul.clientWidth - a.offsetWidth) / 2, behavior: "auto" });
       }
     };
     var sections = Array.prototype.slice.call(document.querySelectorAll(".board"));
@@ -139,7 +143,7 @@
       if (current) {
         current = null;
         links.forEach(function (a) { a.removeAttribute("aria-current"); });
-        if (strip) strip.scrollTo({ left: 0, behavior: calm ? "auto" : "smooth" });
+        if (strip) strip.scrollTo({ left: 0, behavior: "auto" });
       }
     };
     var ticking = false;
@@ -167,6 +171,11 @@
   function digits(v) { return v.replace(/\D/g, ""); }
   function problem(el) {
     var v = el.value.trim();
+    if (el.type === "date") {
+      if (el.validity.badInput) return "Use a full date, like 10/24/2026.";
+      return v && el.min && v < el.min ? "Pick today or a later date." : "";
+    }
+    if (el.type === "number") return v && +v < 1 ? "Headcount starts at 1." : "";
     if (!v) return el.required ? el.dataset.error || "Please fill this in." : "";
     if (el.type === "tel" && digits(v).length < 10) return "Add the area code, like 931-555-0123.";
     if (el.name === "contact" && !/^\S+@\S+\.\S+$/.test(v) && digits(v).length < 10) return "A phone number or an email, please.";
@@ -188,7 +197,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var ok = true;
-      form.querySelectorAll("[required]").forEach(function (el) {
+      form.querySelectorAll("input, textarea").forEach(function (el) {
         var err = el.parentElement.querySelector(".err");
         var msg = problem(el);
         el.setAttribute("aria-invalid", String(!!msg));
@@ -218,23 +227,25 @@
     var btn = stage.querySelector("[data-fill]");
     var pic = stage.querySelector(".cannoli");
     var msg = stage.querySelector("[data-stage-status]");
-    var next = stage.querySelector(".stage-next");
-    var timer;
+    var timer, busy = false;
     function set(filled) {
       clearTimeout(timer);
       stage.classList.toggle("filled", filled);
-      if (next) next.hidden = true;
-      if (!filled) { btn.textContent = "Fill it"; msg.textContent = "Empty shell. Waiting on you."; return; }
+      stage.classList.remove("landed");
+      if (!filled) { busy = false; btn.textContent = "Fill it"; msg.textContent = "Empty shell. Waiting on you."; return; }
       var land = function () {
+        busy = false;
+        stage.classList.add("landed");
         btn.textContent = "Do it again";
         msg.textContent = "Filled. Now come get one.";
-        if (next) next.hidden = false;
       };
       if (calm) { land(); return; }
+      busy = true;
+      btn.textContent = "Filling it";
       msg.textContent = "Filling it.";
-      timer = setTimeout(land, 1400);
+      timer = setTimeout(land, 1700);
     }
-    function flip() { set(!stage.classList.contains("filled")); }
+    function flip() { if (!busy) set(!stage.classList.contains("filled")); }
     btn.addEventListener("click", flip);
     pic.addEventListener("click", flip);
     set(false);

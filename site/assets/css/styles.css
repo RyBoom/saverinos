@@ -45,9 +45,9 @@
   --t0: clamp(1rem, 0.96rem + 0.1vw, 1.0625rem);
   --t1: clamp(1.25rem, 1.19rem + 0.257vw, 1.42rem);
   --t2: clamp(1.5625rem, 1.442rem + 0.495vw, 1.8875rem);
-  --t3: clamp(1.953rem, 1.744rem + 0.862vw, 2.519rem);
-  --t4: clamp(2.4375rem, 2.094rem + 1.4vw, 3.356rem);
-  --t5: clamp(3.05rem, 2.519rem + 2.17vw, 4.475rem);
+  --t3: clamp(1.9531rem, 1.744rem + 0.862vw, 2.519rem);
+  --t4: clamp(2.4414rem, 2.094rem + 1.4vw, 3.356rem);
+  --t5: clamp(3.0518rem, 2.519rem + 2.17vw, 4.475rem);
 
   /* Spacing beats (8px unit, 1 2 3 5 8 13) */
   --s1: 0.5rem;
@@ -353,12 +353,14 @@ p { text-wrap: pretty; max-width: 62ch; }
 /* emptying is quick; filling is the slow, savoured direction */
 .js .stage:not(.filled) .cannoli .c-fill, .js .stage:not(.filled) .cannoli .c-fill.r { transition-duration: 450ms; transition-delay: 0ms; transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
 .stage .btn { min-width: 220px; }
-.stage-status { color: var(--navy); max-width: none; font-family: var(--font-display); font-size: var(--t2); line-height: 1.1; min-height: 2.3em; text-wrap: balance; }
-.stage.filled .btn { background: transparent; color: var(--navy); border-color: var(--navy); }
-.stage.filled .btn:hover { background: var(--navy); color: var(--ivory); }
-.stage-next { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+.stage .stage-status { color: var(--navy); max-width: none; font-family: var(--font-display); font-size: var(--t2); line-height: 1.1; min-height: 2.3em; text-wrap: balance; }
+.stage.landed .btn { background: transparent; color: var(--navy); border-color: var(--navy); }
+.stage.landed .btn:hover { background: var(--navy); color: var(--ivory); }
+.stage-next { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; visibility: hidden; }
+.stage.landed .stage-next { visibility: visible; }
 .no-js .stage .btn, .no-js .stage-status { display: none; }
 .no-js .cannoli { pointer-events: none; cursor: default; }
+.no-js .stage-next, .no-js .js-only { display: none; }
 
 @media (min-width: 56rem) {
   .fav-head { max-width: 22ch; }
@@ -366,7 +368,7 @@ p { text-wrap: pretty; max-width: 62ch; }
   .fav--muff { grid-column: 1 / span 5; }
   .fav--cannoli { grid-column: 6 / span 7; }
   .fav--foc { grid-column: 1 / span 5; }
-  .fav--shells { grid-column: 7 / span 6; }
+  .fav--shells { grid-column: 6 / span 7; }
   .fav--cannoli { border-top: 0; padding-top: 0; }
   .stage { grid-template-columns: 1fr; padding-block: var(--s2); }
 }
@@ -446,12 +448,19 @@ p { text-wrap: pretty; max-width: 62ch; }
 @media (min-width: 56rem) {
   .proof-top { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); column-gap: var(--s8); align-items: start; }
   .slots { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--s5); align-items: stretch; }
-  .slot b { letter-spacing: 0.1em; white-space: nowrap; }
+  .slot b { letter-spacing: 0.1em; }
 }
 
 /* ---------- Family ---------- */
-.route { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.9em; font-family: var(--font-display); font-size: var(--t3); line-height: 1.15; margin-bottom: var(--s5); }
-.route i { width: 9px; height: 9px; border-radius: 50%; background: var(--saffron); display: inline-block; transform: translateY(2px); }
+.route { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; column-gap: 1.8em; row-gap: 0.1em; font-family: var(--font-display); font-size: min(var(--t3), 7.6vw); line-height: 1.15; margin-bottom: var(--s5); }
+.route i { display: none; }
+.route span { position: relative; }
+.route span:nth-of-type(odd)::after { content: ""; position: absolute; left: calc(100% + 0.9em - 4.5px); top: 52%; width: 9px; height: 9px; border-radius: 50%; background: var(--saffron); }
+@media (min-width: 48rem) {
+  .route { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.9em; font-size: clamp(1.25rem, 2.9vw, 1.8875rem); }
+  .route i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--saffron); transform: translateY(2px); }
+  .route span:nth-of-type(odd)::after { content: none; }
+}
 .family-grid { display: grid; gap: var(--s5); }
 .family-copy p + p { margin-top: var(--s2); }
 .family-copy p { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.42rem); line-height: 1.5; font-weight: 500; max-width: 36ch; }
@@ -472,11 +481,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 .foot-rule { border-block: 1px solid var(--hair-light); padding-block: var(--s2); }
 .words--foot { font-size: clamp(0.875rem, 0.78rem + 0.5vw, 1.0625rem); letter-spacing: 0.22em; }
 @media (min-width: 56rem) {
-  .words--foot { display: grid; grid-template-columns: repeat(4, auto); justify-content: center; column-gap: var(--sep); }
-  .words--foot li:nth-child(4n)::after { display: none; }
-}
-@media (min-width: 80rem) {
-  .words--foot { display: flex; flex-wrap: nowrap; justify-content: center; gap: var(--sep); }
+  .words--foot { --sep: 1.2em; display: flex; flex-wrap: nowrap; justify-content: center; gap: var(--sep); font-size: clamp(0.6875rem, 1.3vw, 1.0625rem); letter-spacing: 0.2em; }
   .words--foot li:nth-child(4)::after { display: block; }
 }
 .foot-cols { display: grid; gap: var(--s5); }
@@ -495,7 +500,7 @@ p { text-wrap: pretty; max-width: 62ch; }
 .foot-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .foot-map-fallback { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; padding: var(--s3); gap: var(--s2); }
 .foot-since { font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; font-size: var(--t-1); }
-.tile-band { height: 96px; background: url("../img/tile.svg") round no-repeat center / 96px 96px; border-top: 3px solid var(--navy); }
+.tile-band { height: 96px; background: url("../img/tile.svg") round no-repeat left top / 96px 96px; border-top: 3px solid var(--navy); }
 .legal { padding-block: var(--s3) var(--s3); font-size: 0.8125rem; color: var(--ivory-on-navy); background: var(--navy); }
 .legal p { max-width: none; }
 @media (min-width: 56rem) {
@@ -503,6 +508,7 @@ p { text-wrap: pretty; max-width: 62ch; }
   .foot-top, .foot-rule { grid-column: 1 / -1; }
   .foot-cols { grid-column: 1 / -1; grid-template-columns: minmax(0, 3fr) minmax(0, 3fr) minmax(0, 2.4fr) minmax(0, 3.6fr); column-gap: var(--s5); }
 }
+@media (min-width: 56rem) and (max-width: 79.99rem) { .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--s8); } }
 
 /* ---------- Dock (mobile sticky bar) ---------- */
 .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: grid; grid-template-columns: 1.2fr 1fr 1fr; background: var(--navy); border-top: 3px solid var(--teal); padding-bottom: env(safe-area-inset-bottom); }
@@ -593,18 +599,24 @@ p { text-wrap: pretty; max-width: 62ch; }
 
 /* Anchors: the phone has nothing sticky at the top of the home page, the desktop header is 77px */
 @media (min-width: 56rem) {
-  html { scroll-padding-top: 88px; }
+  html { scroll-padding-top: 77px; }
   .board { scroll-margin-top: 0; }
 }
 .form-wrap { scroll-margin-top: 73px; }
 @media (min-width: 56rem) { .form-wrap { scroll-margin-top: 0; } }
 
-/* Short phones: keep the address and phone above the dock (the dock already carries Directions and Menu) */
+/* Short phones: put the facts (status, address, phone) first so they clear the dock; the headline and buttons follow */
 @media (max-width: 55.99rem) and (max-height: 800px) {
-  .hero-cta { display: none; }
+  .hero-info { grid-template-areas: "where" "line" "cta" "note"; gap: var(--s1); margin-top: var(--s2); }
   .hero-logo { margin-block: 4px; }
-  .hero-info { gap: var(--s1); margin-top: var(--s2); }
   .hero-where { margin-top: var(--s1); }
+}
+@media (max-width: 55.99rem) and (max-height: 700px) {
+  .words a { padding-block: 0.3em; }
+  .hero-logo { margin-block: 0; }
+  .hero-info { margin-top: var(--s1); }
+  .hero-line { font-size: var(--t2); }
+  .hero-phone { margin-top: 0; }
 }
 /* Short desktop windows: keep Call, Directions and Menu in the first screen */
 @media (min-width: 56rem) and (max-height: 820px) {
@@ -651,4 +663,46 @@ figcaption, .item-name, .stage-copy p, address, dd, h4 { text-wrap: pretty; }
   .status[data-open="true"] .status-dot, .hours tr.today th::after { background: Highlight; forced-color-adjust: none; }
   .cat-nav a { border-bottom-color: Canvas; }
   .cat-nav a[aria-current="true"] { border-bottom-color: Highlight; }
+}
+
+/* ---------- Verification round: phones, large text, no script ---------- */
+@media (max-width: 55.99rem) {
+  /* Menu first screen: leave room for a menu item above the dock */
+  .menu-hero h1 { font-size: var(--t4); }
+  .menu-hero .lede { font-size: 1.0625rem; margin-top: var(--s1); }
+  .menu-hero { padding-block: var(--s2); }
+  .board:first-child { padding-top: var(--s3); }
+  .board-intro { font-size: 1rem; line-height: 1.45; margin-bottom: var(--s2); }
+  .board-head { margin-bottom: var(--s1); }
+  /* Larger text: let things wrap instead of pushing the page sideways */
+  .btn, .concept-bar button { white-space: normal; }
+  .concept-bar .wrap { flex-wrap: wrap; }
+  .concept-bar p { min-width: 0; }
+  .foot-hours dd { white-space: normal; text-align: right; }
+  .board-head h2 { overflow-wrap: anywhere; font-size: min(var(--t4), 13vw); }
+  .foot-phone { font-size: min(var(--t3), 8.5vw); }
+  .hero-phone { font-size: min(var(--t2), 8.5vw); }
+}
+@media (max-width: 22.5rem) { .hdr-place { letter-spacing: 0.1em; font-size: 0.6875rem; } }
+.form-note a { display: inline-flex; align-items: center; min-height: 44px; }
+.foot-handle { margin-top: 4px; font-size: 0.875rem; color: var(--ivory-on-navy); }
+.foot-map-link { margin-top: var(--s2); }
+/* No script: a form cannot be submitted, so show the call line instead of dead fields */
+.no-js .form .f, .no-js .form .f-row { display: none; }
+
+/* Very short phones: tighten the Menu's first screen so an item shows above the dock */
+@media (max-width: 55.99rem) and (max-height: 700px) {
+  .menu-hero h1 { font-size: var(--t3); }
+  .menu-hero .lede { font-size: 1rem; margin-top: 4px; }
+  .menu-hero { padding-block: var(--s1); }
+  .menu-legend { margin-top: var(--s1); }
+  .menu-legend .dn { margin-top: 0; padding: 4px 10px; }
+  .board:first-child { padding-top: var(--s2); }
+  .board-head h2 { font-size: min(var(--t3), 13vw); }
+  .board-intro { font-size: 0.9375rem; margin-bottom: var(--s1); }
+}
+/* 200% text on a phone: the call button and the dock labels must shrink or wrap, not push the page */
+@media (max-width: 55.99rem) {
+  .btn[href^="tel:"] { white-space: normal; }
+  .dock a { min-width: 0; padding-inline: 2px; font-size: min(0.8125rem, 3.4vw); }
 }

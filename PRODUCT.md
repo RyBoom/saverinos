@@ -40,6 +40,7 @@ A two page concept for Savarino's Market, a Sicilian family bakery, deli and mar
 - Founder Corrado Savarino Sr.: born in Sicily, raised in Brooklyn, trained at Veniero's in Manhattan. His son Carmelo owns and runs the market; younger brother Corrado Jr. works beside him.
 - First bakery opened in Nashville in 2002. Savarino's Cucina in Hillsboro Village, 2006 to 2017, featured on Diners, Drive-Ins and Dives. Columbia wholesale bakery launched 2019, retail 2023. They still bake wholesale for Nashville area restaurants.
 - Sandwiches at the Cucina were named for regulars. Several names live on.
+- The muffuletta feeds two (the owner's headline seed: "Come hungry. The muffuletta feeds two."). The family meal is an entree, pasta, salad and a loaf. Both come from the brief; treat them as supplied by the owner's side.
 - Press: Nashville Scene, Best of Nashville 2023, "Best Reason to Go to Columbia."
 - Ratings: 4.7 on Google across 156 reviews.
 - Review themes: huge sandwiches, bread baked in house, cannoli filled to order, take home dinners, friendly family service, fair prices, tastes like home to New Yorkers and New Jerseyans, "hidden gem" and "worth the drive."
