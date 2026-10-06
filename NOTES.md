@@ -52,7 +52,7 @@ Every one of these is also marked on the page in a gold box.
 ## What to replace before launch
 
 - The privacy settings. The `noindex` meta tag in both page heads, the `X-Robots-Tag` and `Referrer-Policy` lines in `site/_headers`, the AI crawler blocks in `site/robots.txt` and the hidden address itself all keep the concept out of search under the real business name. Remove them, or the live site will never appear in search.
-- `SITE_URL` in `tools/build_pages.py`, then rerun the script. Set it to the deployed origin so the link preview image works. The images are `assets/img/og.png`, `apple-touch-icon.png` and `favicon-32.png`.
+- `SITE_URL` in `tools/build_pages.py`, then rerun the script, only at real launch on the public domain. Do not set it while the concept lives at a hidden address: it would write that address into every page and into this repo. The images are `assets/img/og.png`, `apple-touch-icon.png` and `favicon-32.png`. `og.png` is excluded from the private deploy by `site/.assetsignore`; remove that line at launch.
 - The form confirmation heading reads "Nothing sent yet." because the forms send nothing. Change it back to a real confirmation when the handlers are wired.
 
 - Placeholder photo frames, review slots and `$00` prices.

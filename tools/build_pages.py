@@ -15,7 +15,7 @@ MAPS = "https://www.google.com/maps/dir/?api=1&destination=314+West+11th+Street%
 MAP_EMBED = "https://www.google.com/maps?q=314+West+11th+Street,+Columbia,+TN+38401&output=embed"
 IG = "https://www.instagram.com/savarinosmarket"
 TT = "https://www.tiktok.com/@savarinosmarket"
-SITE_URL = ""  # deployed origin with no trailing slash, e.g. https://savarinos.pages.dev. Leave empty until deploy; it switches on og:image.
+SITE_URL = ""  # deployed origin with no trailing slash, set only at real launch on the public domain, never for a hidden preview address. It switches on og:image.
 
 # The eight words, exactly as they sit on the sign. Order = two lines of the logo.
 LINE1 = ["Catering", "Deli", "Pastas", "Sandwiches"]
