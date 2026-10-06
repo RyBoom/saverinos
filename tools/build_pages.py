@@ -211,35 +211,43 @@ def star(i, frac):
 
 
 def parking_svg():
+    """Sketch of the block, north up: West 11th Street runs east to South High Street, Parker Street
+    meets it from the north, the shop sits east of Parker, the gravel lot and the CAB building are
+    across the street. Placement follows a satellite view; sizes are exaggerated so labels read."""
     rnd = random.Random(7)
     dots = ""
-    for _ in range(80):
-        x = rnd.uniform(46, 232); y = rnd.uniform(192, 252)
+    for _ in range(70):
+        x = rnd.uniform(14, 166); y = rnd.uniform(174, 232)
         dots += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rnd.choice([1,1.2,1.6]):.1f}"/>'
-    bays_n = "".join(f'<rect x="{20+i*38}" y="114" width="34" height="13"/>' for i in range(4))
-    bays_s = "".join(f'<rect x="{20+i*38}" y="147" width="34" height="13"/>' for i in range(4))
-    return f"""<svg viewBox="0 0 360 270" role="img" aria-labelledby="pk-t pk-d" focusable="false">
+    bays_n = "".join(f'<rect x="{112+21*i}" y="114" width="19" height="12"/>' for i in range(5))
+    bays_s = "".join(f'<rect x="{112+21*i}" y="144" width="19" height="12"/>' for i in range(5))
+    f = 'font-family="Montserrat, sans-serif" font-weight="700" fill="#FDFEF8"'
+    return f"""<svg viewBox="0 0 360 250" role="img" aria-labelledby="pk-t pk-d" focusable="false">
 <title id="pk-t">Where to park</title>
-<desc id="pk-d">Schematic: the shop with its porch at West 11th Street and Parker. Free street parking along the curb. A gravel lot across the street.</desc>
+<desc id="pk-d">Sketch, north up. Savarino's, with its porch, is on the north side of West 11th Street just east of Parker Street. Free street parking runs along the curbs. A gravel lot is across the street to the southwest, and the CAB building is across the street to the southeast. West 11th Street ends at South High Street.</desc>
 <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#FDFEF8" stroke-opacity=".28" stroke-width="1.4"/></pattern></defs>
 <g fill="none" stroke="#FDFEF8" stroke-width="2">
-<path d="M0 112H262M312 112H360M0 162H262M312 162H360M262 0V112M262 162V270M312 0V112M312 162V270"/>
+<path d="M0 112H72M102 112H316M0 158H316M72 0V112M102 0V112M316 0V250M350 0V250"/>
 </g>
-<path d="M190 137H256M318 137H360" stroke="#069DA3" stroke-width="2.5" stroke-dasharray="10 8" fill="none"/>
-<rect x="150" y="30" width="102" height="74" fill="url(#hatch)" stroke="#FDFEF8" stroke-width="2"/>
-<rect x="170" y="88" width="62" height="16" fill="#001C41" stroke="#F1B21C" stroke-width="2"/>
-<circle cx="201" cy="50" r="8" fill="#F1B21C" stroke="#001C41" stroke-width="2"/>
-<text x="201" y="76" text-anchor="middle" font-family="Abril Fatface, Georgia, serif" font-size="17" fill="#FDFEF8">Savarino's</text>
+<path d="M232 135H306M12 135H12" stroke="#069DA3" stroke-width="2.5" stroke-dasharray="10 8" fill="none"/>
+<g fill="none" stroke="#FDFEF8" stroke-opacity=".4" stroke-width="1.5"><rect x="180" y="78" width="16" height="34"/><rect x="200" y="78" width="16" height="34"/><rect x="232" y="58" width="68" height="54"/><rect x="266" y="168" width="36" height="40"/></g>
+<rect x="108" y="56" width="64" height="56" fill="url(#hatch)" stroke="#FDFEF8" stroke-width="2"/>
+<rect x="120" y="100" width="40" height="12" fill="#001C41" stroke="#F1B21C" stroke-width="2"/>
+<circle cx="140" cy="72" r="7" fill="#F1B21C" stroke="#001C41" stroke-width="2"/>
+<text x="140" y="92" text-anchor="middle" font-family="Abril Fatface, Georgia, serif" font-size="12" fill="#FDFEF8">Savarino's</text>
 <g fill="none" stroke="#FDFEF8" stroke-opacity=".75" stroke-width="1.5">{bays_n}{bays_s}</g>
-<rect x="40" y="184" width="196" height="76" fill="none" stroke="#069DA3" stroke-width="2.5" stroke-dasharray="7 5"/>
+<rect x="190" y="168" width="66" height="58" fill="url(#hatch)" stroke="#FDFEF8" stroke-width="2"/>
+<text x="223" y="192" text-anchor="middle" font-family="Abril Fatface, Georgia, serif" font-size="17" fill="#FDFEF8">CAB</text>
+<text x="223" y="207" text-anchor="middle" {f} font-size="9" letter-spacing="1.2">BUILDING</text>
+<rect x="8" y="168" width="164" height="70" fill="none" stroke="#069DA3" stroke-width="2.5" stroke-dasharray="7 5"/>
 <g fill="#FDFEF8" fill-opacity=".6">{dots}</g>
-<rect x="96" y="212" width="84" height="26" fill="#001C41"/>
-<text x="138" y="231" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#FDFEF8">GRAVEL LOT</text>
-<path d="M170 184C170 166 205 160 205 110" fill="none" stroke="#F1B21C" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
-<path d="M198 118l7-9 7 9" fill="none" stroke="#F1B21C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="22" y="72" font-family="Montserrat, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" fill="#F1B21C">FREE STREET</text><text x="22" y="88" font-family="Montserrat, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" fill="#F1B21C">PARKING</text><path d="M60 94V112" stroke="#F1B21C" stroke-width="1.5" fill="none"/>
-<text x="22" y="141" font-family="Montserrat, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.4" fill="#FDFEF8" fill-opacity=".9">WEST 11TH STREET</text>
-<text transform="translate(293 100) rotate(-90)" text-anchor="end" font-family="Montserrat, sans-serif" font-size="11" font-weight="700" letter-spacing="1.8" fill="#FDFEF8">PARKER</text>
+<rect x="46" y="196" width="88" height="24" fill="#001C41"/>
+<text x="90" y="212" text-anchor="middle" {f} font-size="12" letter-spacing="1.5">GRAVEL LOT</text>
+<path d="M128 168C128 150 140 142 140 118" fill="none" stroke="#F1B21C" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
+<path d="M133 124l7-9 7 9" fill="none" stroke="#F1B21C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="10" y="138.5" {f} font-size="10" letter-spacing="1.4" fill-opacity=".9">WEST 11TH STREET</text>
+<text transform="translate(91 104) rotate(-90)" {f} font-size="10" letter-spacing="1.6">PARKER ST</text>
+<text transform="translate(337 108) rotate(-90)" {f} font-size="10" letter-spacing="1.6">S HIGH ST</text>
 </svg>"""
 
 
@@ -326,7 +334,7 @@ def home():
 {dn("know", "Holiday and seasonal hours (the hours shown are the ones supplied). Accessibility: porch steps or ramp, door width, restroom, how many outdoor tables. Daily specials: how to show what is in the case today and when hot food runs out.")}
 </div>
 <div class="know-diagram">
-<figure>{parking_svg()}<figcaption>Schematic, not to scale.</figcaption></figure>
+<figure>{parking_svg()}<figcaption>Sketch, north up, not to scale. The bays are free street parking. The gold line walks you from the lot to the porch.</figcaption></figure>
 {dn("parking", "Where the gravel lot sits, any time limits or signage, and whether customers may use it. This diagram is a sketch from the facts supplied, not a survey.")}
 </div>
 <div class="know-photo"><div class="ph" style="aspect-ratio:16/10"><span>PHOTO: the brick storefront with the porch, shot from across the street</span></div></div>
