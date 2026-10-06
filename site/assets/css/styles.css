@@ -501,6 +501,8 @@ p { text-wrap: pretty; max-width: 62ch; }
 .foot-map-fallback { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; padding: var(--s3); gap: var(--s2); }
 .foot-since { font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; font-size: var(--t-1); }
 .tile-band { height: 96px; background: url("../img/tile.svg") round no-repeat left top / 96px 96px; border-top: 3px solid var(--navy); }
+/* A slimmer tile row that opens the navy sections higher up the page */
+.tile-band--slim { height: 64px; background: url("../img/tile.svg") round no-repeat left top / 64px 64px; border-top: 0; }
 .legal { padding-block: var(--s3) var(--s3); font-size: 0.8125rem; color: var(--ivory-on-navy); background: var(--navy); }
 .legal p { max-width: none; }
 @media (min-width: 56rem) {

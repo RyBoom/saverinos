@@ -10,6 +10,8 @@ A two page concept (Homepage, Menu) for Carmelo Savarino. These notes are for wh
 
 **The eight words are the spine.** They sit in two dotted lines above and below the logo, exactly as on the register screen. They return as eight blocks in two rows (Sandwiches and Pastries are the navy blocks, so the grid does not read as eight identical cards), as the eight section headings on the Menu, and as one dotted line in the footer. Each one links to its Menu section.
 
+**The tiles run down the page.** The maiolica tile from your logo appears three times, always as a single full width row: a slim one under the hero (it opens the navy Know before you go room), a slim one before Wholesale, and the full one in the footer. They mark where the page turns from ivory to navy. They never sit behind text. The original brief asked for the footer band only; the other two were added after the first review.
+
 **The menu is a deli board.** Names, dotted leaders, `$00`. No cards. On a phone the eight categories stick to the top and follow you down the page. On a desktop they sit in the rail.
 
 ## The delight moment

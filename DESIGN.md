@@ -239,7 +239,7 @@ Each sign block sets `--k` and renders its h4 at `t2 * k`, so the words read as 
 
 **Spacing beats.** An 8px unit on a 1, 2, 3, 5, 8, 13 sequence: 0.5, 1, 1.5, 2.5, 4, 6.5rem. Section padding is 4rem on phones, 6.5rem at 56rem. Gaps inside components use s1 to s3; gaps between components use s5 to s8.
 
-**Three acts.** The homepage is read as three acts. (1) The sign: hero, hours and what to know. (2) The goods: everything on the sign, crowd favorites, catering and cakes, wholesale on a navy field. (3) The family: proof, route, and the navy footer with tile band. Fields alternate ivory, ivory-deep and navy to mark act changes; the footer is always navy.
+**Three acts.** The homepage is read as three acts. (1) The sign: hero, hours and what to know. (2) The goods: everything on the sign, crowd favorites, catering and cakes, wholesale on a navy field. (3) The family: proof, route, and the navy footer with tile band. A slim tile row opens each of the two navy rooms above the footer (Know before you go, Wholesale), so the maiolica runs down the page as a sill, not a pattern. Fields alternate ivory, ivory-deep and navy to mark act changes; the footer is always navy.
 
 **Hero first viewport.** Top to bottom: header (logo hidden on home until scrolled past, replaced by a small place line), the eight words as a sign (two-column grid of four rows on phones with saffron dots between pairs; one centered row with 2.4em gaps at 56rem), the full color logo at up to 44rem wide, then the info band: display tagline, open/closed status, address and tap-to-call phone, and Call / Directions / Menu buttons. At 56rem the info band is 8fr tagline and actions, 4fr where-block. The primary call, directions and menu actions are always within the first viewport, and on phones also in the dock.
 
@@ -259,9 +259,9 @@ Flat. No cast shadows, no gradients, no blur. Depth is carried by field changes 
 
 Square. Buttons, inputs, panels, blocks and frames have 0 radius. The only curves are circular dots (saffron separators, status dot, active-nav dot, bullets), the 2px focus rounding, and the curves inside ornament artwork. Borders carry the structure: 2px for buttons, inputs, framed panels and section rules; 1px for block dividers and hairlines; dashed teal for placeholder and quote frames; dotted for leaders.
 
-**Ornaments.** Two ornament assets come from the logo: the corner flourish (52 by 49px, mirrored with scale transforms to all four corners of a framed panel, inset 3px) and the fleuron divider (72 by 24px, flanked by 1px teal lines). The tile band is a 96px strip of the logo's maiolica tile, repeated on x, over a 3px navy top border, sitting between footer and legal line.
+**Ornaments.** Two ornament assets come from the logo: the corner flourish (52 by 49px, mirrored with scale transforms to all four corners of a framed panel, inset 3px) and the fleuron divider (72 by 24px, flanked by 1px teal lines). The tile band is a strip of the logo's maiolica tile, repeated on x. The footer band is 96px over a 3px navy top border, sitting between footer and legal line. The slim variant (`.tile-band--slim`) is 64px with no border and sits flush against the top edge of a navy section, above Know before you go and above Wholesale. `round` background sizing keeps whole tiles at every width.
 
-**The Ornaments Never Wallpaper Rule.** Corner flourishes belong to a framed panel (the order forms), the fleuron to a single section break, the tile band to the footer only. Never tile ornament behind content, never repeat a flourish on a surface that does not frame something.
+**The Ornaments Never Wallpaper Rule.** Corner flourishes belong to a framed panel (the order forms), the fleuron to a single section break, the tile band to the sills of the navy rooms (one slim row above each of the two navy sections, one full row in the footer). Never tile ornament behind content, never repeat a flourish on a surface that does not frame something.
 
 ## Components
 
@@ -336,7 +336,7 @@ One easing: `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease`), an out-expo. Durations: 
 - **Don't** set ivory text on a teal face.
 - **Don't** use saffron as a surface wash, a text color on ivory, or on more than a few marks per screen. Cannoli gold never appears in UI.
 - **Don't** use gradients, drop shadows, rounded corners, or thick side stripes. Borders go all the way around or run as full rules.
-- **Don't** let ornaments become wallpaper: corner flourishes only on framed panels, the fleuron only as a single section divider, the tile band only above the footer legal line.
+- **Don't** let ornaments become wallpaper: corner flourishes only on framed panels, the fleuron only as a single section divider, the tile band only as a single row at the top edge of a navy section or above the footer legal line, never behind content and never more than one row.
 - **Don't** add a second delight interaction, or any decorative animation.
 - **Don't** introduce a third typeface, a script face, emoji, glyph icons, or stock or scraped photography.
 - **Don't** use Italian flag color combinations, checkered patterns, or illustrations in any other style than the logo's etching.

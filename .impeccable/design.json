@@ -179,7 +179,7 @@
       { "name": "The Two Voices Rule", "body": "Display serif for names and headings, sans for everything that is read or tapped. Never set paragraphs in the serif; never set a heading in the sans except the uppercase sign-word list and labels.", "section": "typography" },
       { "name": "The Tabular Price Rule", "body": "Prices and hours use tabular numerals, bold, with 0.04em tracking on prices.", "section": "typography" },
       { "name": "The Flat Rule", "body": "A surface rises by changing ground or gaining a teal rule, never by casting a shadow.", "section": "elevation" },
-      { "name": "The Ornaments Never Wallpaper Rule", "body": "Corner flourishes belong to a framed panel (the order forms), the fleuron to a single section break, the tile band to the footer only. Never tile ornament behind content, never repeat a flourish on a surface that does not frame something.", "section": "shapes" }
+      { "name": "The Ornaments Never Wallpaper Rule", "body": "Corner flourishes belong to a framed panel (the order forms), the fleuron to a single section break, the tile band to the sills of the navy rooms (one slim row above each of the two navy sections, one full row in the footer). Never tile ornament behind content, never repeat a flourish on a surface that does not frame something.", "section": "shapes" }
     ],
     "dos": [
       "Do set all text in navy on ivory (16.7:1), navy-2 for secondary (8.6:1), and ivory or ivory-on-navy (10.6:1) on navy fields.",
@@ -198,7 +198,7 @@
       "Don't set ivory text on a teal face.",
       "Don't use saffron as a surface wash, a text color on ivory, or on more than a few marks per screen. Cannoli gold never appears in UI.",
       "Don't use gradients, drop shadows, rounded corners, or thick side stripes. Borders go all the way around or run as full rules.",
-      "Don't let ornaments become wallpaper: corner flourishes only on framed panels, the fleuron only as a single section divider, the tile band only above the footer legal line.",
+      "Don't let ornaments become wallpaper: corner flourishes only on framed panels, the fleuron only as a single section divider, the tile band only as a single row at the top edge of a navy section or above the footer legal line, never behind content and never more than one row.",
       "Don't add a second delight interaction, or any decorative animation.",
       "Don't introduce a third typeface, a script face, emoji, glyph icons, or stock or scraped photography.",
       "Don't use Italian flag color combinations, checkered patterns, or illustrations in any other style than the logo's etching.",

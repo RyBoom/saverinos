@@ -312,6 +312,7 @@ def home():
 </div>
 </section>
 
+<div class="tile-band tile-band--slim" role="presentation"></div>
 <section class="sec field-navy" id="visit" aria-labelledby="visit-h">
 <div class="wrap">
 <div class="rf">
@@ -414,6 +415,7 @@ def home():
 </div>
 </section>
 
+<div class="tile-band tile-band--slim" role="presentation"></div>
 <section class="sec wholesale field-navy" id="wholesale" aria-labelledby="ws-h">
 <div class="wrap">
 <div class="ws-main">
