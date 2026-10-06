@@ -2,7 +2,7 @@
   // Never add "routes" or "custom_domain" here. The private hostname is attached
   // outside this repo on purpose (this repo's history can be seen by others),
   // and Wrangler would override the real route on the next deploy.
-  "name": "saverinos",
+  "name": "savarinos-market",
   "compatibility_date": "2026-10-06",
   "assets": { "directory": "./site" },
   "workers_dev": false,
