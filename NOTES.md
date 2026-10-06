@@ -45,7 +45,7 @@ Every one of these is also marked on the page in a gold box.
 12. **Wholesale.** Delivery area, delivery days, minimums, lead times, and a wholesale email or direct line.
 13. **Press.** Exact Nashville Scene wording and permission, and the Diners, Drive-Ins and Dives details.
 14. **Reviews.** Three real Google reviews to paste in, with names as they appear.
-15. **Photos.** One temporary photo (a toasted meringue drink in a green glass, not a muffuletta, with a child's hand in it) stands in for the muffuletta shot on both pages and is labeled "Temp photo". Every other frame is a placeholder that names its shot. People photos need the family's okay.
+15. **Photos.** One real photo (a muffuletta cut in half and held in two hands, the other half in a takeout box) fills the muffuletta frame on both pages. Confirm it is the shop's own sandwich, that it may be used, and that the person holding it agrees. Every other frame is a placeholder that names its shot. People photos need the family's okay.
 16. **Social links.** Instagram and TikTok links are built from @savarinosmarket. Check they land on the right accounts.
 17. **Headline and voice.** The hero line and every other line of copy.
 

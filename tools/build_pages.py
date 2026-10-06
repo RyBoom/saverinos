@@ -189,9 +189,8 @@ def form_catering(p):
 </form>"""
 
 
-def temp_photo(cls=""):
-    return ('<figure class="photo %s"><img src="assets/img/temp-photo.webp" alt="Temporary photo: a toasted meringue drink in a green glass, standing in for the muffuletta shot" width="1200" height="1600" loading="lazy">'
-            '<figcaption><b>Temp photo.</b> Needed here: muffuletta cut in half on butcher paper.</figcaption></figure>') % cls
+def muffuletta_photo(cls=""):
+    return ('<figure class="photo %s"><img src="assets/img/muffuletta.webp" alt="A muffuletta cut in half and held in two hands: layers of sliced meat and cheese, roasted red peppers and green relish on seeded bread, with the other half in a takeout box" width="1200" height="1600" loading="lazy"></figure>') % cls
 
 
 def framed(inner, cls=""):
@@ -364,7 +363,7 @@ def home():
 <h2 class="fav-head" id="fav-h" style="margin-top:clamp(40px,6vw,104px)"><span>Come hungry.</span> <span>The muffuletta feeds two.</span></h2>
 <div class="favs">
 <article class="fav fav--muff">
-{temp_photo()}
+{muffuletta_photo()}
 <h3>The muffuletta</h3>
 <p>Big enough to share. Bring someone, or take half home.</p>
 </article>
@@ -487,7 +486,7 @@ def home():
 </div>
 <div class="ph ph--tall" style="max-width:420px"><span>PHOTO: Carmelo and Corrado Jr. behind the case</span></div>
 </div>
-{dn("photos", "One temporary photo (a toasted meringue drink, standing in for the muffuletta) sits in the muffuletta frames on both pages, and it shows a child's hand. Every other photo is a placeholder that names its shot. People photos need the family's okay.")}
+{dn("photos", "The muffuletta photo on both pages was supplied for this concept: a half sandwich held in two hands. Confirm it is the shop's own sandwich, that it may be used, and that the person holding it agrees. Every other photo is still a placeholder that names its shot.")}
 </div>
 </div>
 </div>
@@ -593,7 +592,7 @@ def menu():
                   intro='<p class="board-intro">At the Cucina, the family’s Nashville restaurant, sandwiches were named for regulars. Several names live on here.</p>',
                   items_html=sandwiches,
                   extra=dn("sandwiches", "What goes on The Savarino, The Sicilian, The Corrado and the classics, which names are still on the board, and who each one was named for."),
-                  ph=temp_photo("photo--wide"))
+                  ph=muffuletta_photo("photo--wide"))
     body += board("Deli", items_html=deli, two=True)
     body += board("Pastas", items_html=pastas, extra=meal, ph="")
     body += board("Bread", intro='<p class="board-intro">Baked in house.</p>', items_html=bread,
