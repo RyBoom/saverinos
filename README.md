@@ -15,3 +15,4 @@ A two page, mobile first concept for Savarino's Market, a Sicilian family bakery
 - `PRODUCT.md`, `DESIGN.md`, `.impeccable/`: product truth and the design system, kept out of anything you deploy.
 
 The earlier single file homepage prototype (painted brick wall) is replaced by this concept. It is still in git history at commit `c93d26e`.
+
