@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static, two pages: `site/index.html` and `site/menu.html`, one shared stylesheet and one small script in `site/assets/`. Two self hosted font families. No build step, no dependencies. Chosen so the concept can be dropped on any static host (Cloudflare Pages, output directory `site`) or sent to the owner as one link.
+Static, two pages: `site/index.html` and `site/menu.html`, one shared stylesheet and one small script in `site/assets/`. Two self hosted font families. No build step, no dependencies. Chosen so the concept can be dropped on any static host (Cloudflare Workers static assets, folder `site`) or sent to the owner as one link.
 
 ## Users
 

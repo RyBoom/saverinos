@@ -51,11 +51,11 @@ Every one of these is also marked on the page in a gold box.
 
 ## What to replace before launch
 
-- The `noindex` meta tag in both page heads. Remove it, or the site will not appear in search. It is there so the concept does not get indexed under the real business name.
+- The privacy settings. The `noindex` meta tag in both page heads, the `X-Robots-Tag` and `Referrer-Policy` lines in `site/_headers`, the AI crawler blocks in `site/robots.txt` and the hidden address itself all keep the concept out of search under the real business name. Remove them, or the live site will never appear in search.
 - `SITE_URL` in `tools/build_pages.py`, then rerun the script. Set it to the deployed origin so the link preview image works. The images are `assets/img/og.png`, `apple-touch-icon.png` and `favicon-32.png`.
 - The form confirmation heading reads "Nothing sent yet." because the forms send nothing. Change it back to a real confirmation when the handlers are wired.
 
 - Placeholder photo frames, review slots and `$00` prices.
-- The form handlers. The simplest route on Cloudflare Pages is a Pages Function that emails the family, or a form service pointed at the family inbox.
+- The form handlers. The simplest route on Cloudflare is a Worker that emails the family, or a form service pointed at the family inbox.
 - The parking sketch, if the family prefers a photographed or surveyed version.
 - The map in the footer is a live Google embed; it needs an internet connection to draw.

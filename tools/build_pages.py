@@ -69,7 +69,8 @@ def head(title, desc, page):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#001C41">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Savarino’s Market">
 <meta property="og:title" content="{og_title}">
@@ -162,7 +163,7 @@ def footer():
 <h3>Map</h3>
 <div class="foot-map">
 <div class="foot-map-fallback" aria-hidden="true"><p style="margin:0;max-width:none">{ADDR}</p></div>
-<iframe title="Map to Savarino's Market, 314 West 11th Street, Columbia, Tennessee" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe title="Map to Savarino's Market, 314 West 11th Street, Columbia, Tennessee" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer"></iframe>
 </div>
 <a class="btn btn-line-light foot-map-link" href="{MAPS}" rel="noopener">Open in Maps</a>
 </div>
