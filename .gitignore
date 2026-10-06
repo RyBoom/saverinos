@@ -2,3 +2,6 @@
 .impeccable/build/
 .impeccable/config.local.json
 .DS_Store
+
+# Local Cloudflare dev state
+.wrangler/
